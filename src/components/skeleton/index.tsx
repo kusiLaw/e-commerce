@@ -1,8 +1,6 @@
 'use client'
 import React from 'react'
 
-import Example from '../cart'
-
 export const  ImageSkeleton = ({
   rounded = 'rounded-full',
   width = 'w-10',
@@ -15,7 +13,7 @@ export const  ImageSkeleton = ({
   )
 }
 
-export const CartroductSkeleton = () => {
+export const CartProductSkeleton = () => {
   return (
     <div className='flex flex-col gap-3 w-full'>
     
@@ -73,3 +71,4 @@ export const CartroductSkeleton = () => {
 
 
 
+ 
