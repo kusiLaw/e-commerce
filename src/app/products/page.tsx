@@ -2,36 +2,51 @@ import React from 'react'
 import ProductCard from '@/components/product/product_card'
 import Link from 'next/link'
 import { products } from '@/data/mock'
+import Pegination from '@/components/pegination'
+import Filter from '@/components/filter'
+import { CiSearch } from "react-icons/ci";
+import { BiGridAlt } from "react-icons/bi";
+import { FaList } from "react-icons/fa6";
+
+
+
+
+
 
 const Products = () => {
   return (
-    <div className='w-full h-auto pt-6'>
-      <div className='text-xs text-gray-500 ml-[4%]'>
+    <div className='w-full h-auto pt-4 '>
+      <div className='text-xs text-gray-500 ml-[2%]'>
 
-        <Link href={'/'}>Home </Link> / 
+        <Link href={'/'} className='hover:text-gray-700'>Home </Link> / 
       </div>
       <div className='flex  w-full pt-4'>
         
-        <div className='hidden lg:block md:w-[14rem] lg:w-[16rem] border-r shadow-sm divide-y gap-3'>
-            <h3 className='text-center bg-gray-100 p-3 w-full'>Filter</h3>
-            <div className=''>
-            </div>
+        <div className='hidden sticky top-0 lg:block md:w-[14rem] lg:w-[16rem] h-fit  shadow-sm divide- gap-3'>
+          <Filter/>
         </div>
          <div className='w-full '>
-            <div className="flex  w-fit justify-end mt-2 mb-6">
-                {/* <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset
-                ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-blue-hover
-                sm:text-sm sm:leading-6"
-                /> */}
+            <div className="flex  w-full justify-end items-center mt-2 mb-6 pr-10">
+                <div className="rounded-full border-0 py-1 pl-4 text-gray-900 shadow-sm ring-1 ring-inset
+                    ring-gray-400 placeholder:text-gray-400 focus:ring-1 focus:ring-inset flex items-center">
+                  <input
+                    name="email"
+                    type='text'
+                    placeholder='Search'
+                    className="w-full border-collapse focus:outline-0 focus:ring-0 active:border-collapse  "
+                    />
+
+                  <span className='text-lg px-2'><CiSearch/></span> 
+                </div>
+               <div className='text-[1.5rem] ml-5 text-gray-500 hover:text-gray-700'>
+                 <BiGridAlt/>
+               </div>
+               <div  className='text-[1.5rem] ml-2 text-gray-500 hover:text-gray-700'>
+                  <FaList/>
+               </div>
             </div>
             
-            <div className="w-full m-auto grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 overflow-y-scroll">
+            <div className="w-full m-auto grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
                 {
                     products.map(data =>(
                     <div key={data.id}>
@@ -40,19 +55,10 @@ const Products = () => {
                     ))
                 }
             </div>
-
-
-            
-
-
-
-
-
-
-
-
+            <div className='flex w-full justify-center my-16'>
+                <Pegination/>
+            </div>
          </div>
-       
       </div>
     </div>
 
