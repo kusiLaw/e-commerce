@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCard from '@/components/product/product_card'
 import Link from 'next/link'
 import { products } from '@/data/mock'
-import Pegination from '@/components/pegination'
+import Pagination from '@/components/pagination'
 import Filter from '@/components/filter'
 import { CiSearch } from "react-icons/ci";
 import { BiGridAlt } from "react-icons/bi";
@@ -56,7 +56,7 @@ const Products = () => {
                 }
             </div>
             <div className='flex w-full justify-center my-16'>
-                <Pegination/>
+                <Pagination/>
             </div>
          </div>
       </div>
