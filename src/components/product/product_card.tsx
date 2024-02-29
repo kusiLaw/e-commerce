@@ -16,9 +16,6 @@ export interface  Product {
 }
 
 
-
-  // height = {180} 
-                    // width={180}
 const  ProductCard = ({name, image, tag, color,price, link }: Product) => {
   return (
     <div  className='relative  group  border-[1px] flex-shrink
@@ -53,7 +50,7 @@ const  ProductCard = ({name, image, tag, color,price, link }: Product) => {
                     <p className=' text-ellipsis text-nowrap overflow-hidden w-full '>{color} </p>
                 </div>
                 <div className='flex justify- w-full mb-2 mt-2'>
-                    <p className='text-ellipsis text-nowrap overflow-hidden w-full  font-bold '>{price}</p>
+                    <p className='text-ellipsis text-nowrap overflow-hidden w-full  font-bold '>{price.toString()}</p>
                     {/* <div><p className='line-through font-extralight text-[8px]'>{2344}</p></div> */}
                 </div>
             </div>

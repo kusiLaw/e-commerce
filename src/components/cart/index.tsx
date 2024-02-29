@@ -6,12 +6,12 @@ import CartProduct from './product'
 
 
 
-export default function Cart() {
-  const [open, setOpen] = useState(true)
+export default function Cart({open=false, setOpen=()=>{}} ) {
+  // const [open, setOpen] = useState(isOpen )
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <Dialog as="div" className="relative z-40 w-full " onClose={setOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
@@ -21,7 +21,7 @@ export default function Cart() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-600/30  transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">

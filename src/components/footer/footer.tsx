@@ -1,17 +1,18 @@
+'use client'
 import { useState } from 'react'
-// import Logo from '../logo/logo'
+import Logo from '@/components/logo/logo'
 // import SocialIcons from '../social/social_icons'
-// import FooterList from '@/components/footer/footer_list'
+import FooterList from '@/components/footer/footer_list'
 
 
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   return (
-    <footer className='bg-default_blue pt-12 md:pt-16 pb-4 px-4 md:px-20 mt-12 text-white w-full'>
+    <footer className='bg-gray-100 pt-12 md:pt-16 pb-4 px-4 md:px-20 mt-12 text-black w-full max-w-[1660px] mx-auto'>
        <div className='flex flex-col md:flex-row justify-between  w-full '>
-          {/* <Logo fontSize={`text-md md:text-lg`} /> */}
-          {/* <div className='flex flex-c justify-end flex-wrap gap-[10%] md:gap-20 '>
+          <Logo fontSize={`text-md md:text-lg`} />
+          <div className='flex flex-c justify-end flex-wrap gap-[10%] md:gap-20 '>
               <FooterList header='support'
                list={[ ['Pricing' , '/support'],
                 ['patron' , '/patrons'],
@@ -32,9 +33,9 @@ const Footer = () => {
                 ['Claims' , '/claims'],
                 ['Terms', '/terms']
                 ]}   />
-          </div> */}
+          </div>
        </div>
-       <div className='flex flex-col md:flex-row md:justify-between gap-4  py-4 md:py-6 border-y-[0.1px] mt-6'>
+       <div className='flex flex-col md:flex-row md:justify-between gap-4  py-4 md:py-6 border-black divide-y-2 mt-6'>
             <div className='w-full'>
                <h3 className='font-semibold'>Subscribe for Updates</h3>
                <p className='font-light'>The latest news, version, and resources, sent to your inbox mnothly.</p>
@@ -56,9 +57,7 @@ const Footer = () => {
             md:flex-row md:justify-between
             mt-8 font-thin md:font-light text-sm text-[#a9a9a9] '>
         <p className='flex flex-wrap'> © 2020 LakyPos, Inc. All rights reserved.</p>
-        {/* <div className='flex text-lg lg:text-xl gap-4 font-thin justify-end ' >
-          <SocialIcons />
-        </div> */}
+     
        </div>
     </footer>
   )

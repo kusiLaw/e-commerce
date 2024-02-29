@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from './product_card';
-import StyledComponentsRegistry from '@/lib/sty';
+import StyledComponentsRegistry from '@/lib/style_component_registry';
 
 
 const RelatedProduct = () => {

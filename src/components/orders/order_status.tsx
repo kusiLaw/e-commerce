@@ -1,5 +1,5 @@
 import React from 'react'
-import ProgressBar from '../progress_bar'
+import ProgressBar from '../form/progress_bar'
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import Link from 'next/link';
 

@@ -21,14 +21,14 @@ const ProductDetails = () => {
            <div className='w-full flex justify-center content-center'>
                 <div className='relative w-[15rem] h-[15rem]  sm:w-[20rem] sm:h-[20rem] md:w-[25rem] md:h-[25rem]
                 lg:w-[30rem] lg:h-[30rem] self-center'>
-                    <Image src={image} key={''} alt={'3'} fill className={'hover:scale-105'}/> 
+                    <Image src={image} key={''} alt={'3'} fill objectFit='contain'/> 
                 </div>
             </div>
 
             <div className='flex justify-center p-1 w-full gap-2 '>
                 {images.map((img, ind ) => (
                 <div className='relative flex gap-3 w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] '>
-                <Image src={img} key={ind + img} alt={img} fill className='hover:scale-105' onClick={()=>setImage(img)}/>
+                <Image src={img} key={ind + img} alt={img} fill  onClick={()=>setImage(img)}/>
                 </div>
                 ) )
                 }

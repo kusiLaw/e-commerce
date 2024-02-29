@@ -22,8 +22,8 @@ const CartProduct = () => {
                 
                 <div className=" h-24 w-24 flex-shrink-0 flex content-center justify-center overflow-hidden rounded-md border border-gray-200">
                   <Image
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={product.image}
+                    alt={product.name}
                     className="h-fit  w-fit self-center content-center"
                     width={80}
                     height={80}

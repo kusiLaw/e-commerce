@@ -1,6 +1,6 @@
 import React from 'react'
 import Star from '../stars_rating/star'
-import ProgressBar from '../progress_bar'
+import ProgressBar from '../form/progress_bar'
 import { productReviews } from '@/data/mock'
 
 
