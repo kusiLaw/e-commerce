@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useState} from 'react'
 import {products}  from "@/data/mock"
 import Link from 'next/link'
