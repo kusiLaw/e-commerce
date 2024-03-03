@@ -3,7 +3,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import CartProduct from './product'
-
+import Link from 'next/link'
 
 
 export default function Cart({open=false, setOpen=()=>{}} ) {
@@ -68,13 +68,21 @@ export default function Cart({open=false, setOpen=()=>{}} ) {
                       
                       {/** button */}
                       <div className="mt-6">
-                        <a
-                          href="#"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-blue-context hover:bg-blue-hover
+                        <button
+                          // href="#"
+                          className="flex items-center justify-center w-full rounded-md border border-transparent bg-blue-context hover:bg-blue-hover
                            px-6 py-2.5 text-base font-medium text-white shadow-sm"
+                           onClick={() => setOpen(false)}
                         >
                           Checkout
-                        </a>
+                        </button>
+                        <Link
+                          href={'/cart'}
+                          className="flex mt-6 items-center justify-center w-full rounded-md border border-blue-context hover:bg-gray-50
+                           px-6 py-2.5 text-base font-medium text-blue-context shadow-sm"
+                        >
+                          View Cart
+                        </Link>
                       </div>
 
                       {/* or */}
