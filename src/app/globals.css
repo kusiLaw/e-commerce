@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@media print { 
+    footer, header { 
+      display: none!important;
+     } 
+}
+
