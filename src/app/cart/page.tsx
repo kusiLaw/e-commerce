@@ -27,7 +27,7 @@ const ShoppingCart = () => {
               <Link href={'/checkout'}
                 type="submit"
                 className={` flex w-full justify-center rounded-md bg-blue-context font-semibold  px-2 py-2  font- leading-6 text-lg capitalize
-                text-gray-200 shadow-sm  hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
+                text-white shadow-sm  hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
                 Checkout Now
               </Link>
           </div>

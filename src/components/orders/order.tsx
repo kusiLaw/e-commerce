@@ -12,8 +12,8 @@ const Orders = ({orderStatus = 'placed'}) => {
 
 
   return (
-    <div className='p-3 md:p-10 bg-gray-50'>
-        <div>
+    <div className='p-3 md:p-10 bg-gray-50 '>
+        <div className=''>
           <OrderStatus orderStatus= {orderStatus}/>
         </div>
 
@@ -24,8 +24,8 @@ const Orders = ({orderStatus = 'placed'}) => {
                 
                 <div className=" h-24 w-24 flex-shrink-0 flex content-center justify-center overflow-hidden rounded-md  border-gray-200">
                   <Image
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={product.image}
+                    alt={product.image}
                     className="h-fit  w-fit self-center content-center"
                     width={80}
                     height={80}
@@ -36,7 +36,7 @@ const Orders = ({orderStatus = 'placed'}) => {
                   <div>
                     <div className="flex justify-between text-base text-gray-900">
                       <h3>
-                        <Link href={product.href} className='text-blu-context'>{product.name}</Link>
+                        <Link href={product.link} className='text-blu-context'>{product.name}</Link>
                       </h3>
                       <div className="flex">
                       <Link href={orderStatus === 'delivered' ? 'review-view' : 'product-link'}

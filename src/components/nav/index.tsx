@@ -49,7 +49,7 @@ const Nav = () => {
          font-medium text-white sm:px-6 lg:px-6">
           Get free delivery on orders over $100
         </p> */}
-        <nav  className="fixed z-30 top-0 right-0 left-0 mx-auto  px-4 sm:px-6 lg:px-8  h-[4rem] bg-gray-100 w-full max-w-[1660px] ">
+        <nav  className="fixed z-30 top-0 right-0 left-0 mx-auto  px-4 sm:px-6 lg:px-8  h-[4rem] bg-gray-50 w-full max-w-[1660px] ">
      
           <div className='flex justify-between h-full' >
             <div className='h-full flex items-center'>

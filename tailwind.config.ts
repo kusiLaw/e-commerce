@@ -20,8 +20,14 @@ const config: Config = {
         'blue-darker': '#004c99',
         'blue-contrast' : ' #ff66cc',
         'blue-contrast1' : '#ff9900'
+      },
+
+      screens: {
+      'xsm': '360px',
       }
     },
+
+   
   },
   plugins: [],
 };

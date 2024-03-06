@@ -5,7 +5,7 @@ import ProductReviewStatistics from './product_review_satistics'
 
 const ProductReview = () => {
   return (
-    <div className='flex w-[100%] bg-gray-50 py-16 '>
+    <div className='flex w-[100%] bg-gray-50 py-20 '>
       <div className='flex flex-col md:flex-row   self-center gap-5 mx-[5%]'>
         <div className='w-full md:w-[50%] px-4  py-2 '>
           <h2 className='text-lg md:text-2xl font-semibold mb-4'>Customer Reviews</h2>

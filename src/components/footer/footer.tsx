@@ -9,7 +9,8 @@ import FooterList from '@/components/footer/footer_list'
 const Footer = () => {
   const [email, setEmail] = useState('');
   return (
-    <footer className='bg-gray-100 pt-12 md:pt-16 pb-4 px-4 md:px-20 mt-12 text-black w-full max-w-[1660px] mx-auto'>
+    <footer className='bg-gray-50 pt-12 md:pt-16 pb-4 px-4 md:px-20 mt-12 text-black w-full max-w-[1660px]
+    border-t border-t-gray-100 mx-auto'>
        <div className='flex flex-col md:flex-row justify-between  w-full '>
           <Logo fontSize={`text-md md:text-lg`} />
           <div className='flex flex-c justify-end flex-wrap gap-[10%] md:gap-20 '>
