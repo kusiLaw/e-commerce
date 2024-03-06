@@ -8,6 +8,7 @@ import TextCollapse from '@/components/collapsible_dev/collapsible_dev'
 // import { Assistant } from 'next/font/google'
 import { assistant } from '../font'
 import { RadioGroup } from '@headlessui/react'
+import { LiaRulerHorizontalSolid } from "react-icons/lia";
 
 
 const images = ['/img/hp_envy_1.jpg','/img/hp_envy_2.jpg','/img/hp_envy_3.jpg','/img/hp_envy_4.jpg']
@@ -106,8 +107,9 @@ const ProductDetails = () => {
                         Sizes
                         
                       </h3>
-                      <Link href="#" className="text-sm font-normal italic text-blue-context hover:text-blue-hover hover:underline underline-offset-4">
-                        Size guide
+                      <Link href="#" className=" flex items-center gap-1 text-sm font-normal italic text-blue-context
+                       hover:text-blue-hover ">
+                        <span className='inline-block text-xl '><LiaRulerHorizontalSolid/></span> Size guide
                       </Link>
                     </div>
                     <ul className="w-full flex gap-3 flex-wrap flex-shrink">

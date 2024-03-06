@@ -29,7 +29,7 @@ const  ProductCard = ({name, image, tag, color,price, link }: Product) => {
                     <Image src={image} alt={''}
                     fill
                     objectFit='contain'
-                    priority
+                    // priority
                     sizes="170px, 170px, (max-width: 768px) 180px, 180px"
                     />
                     {tag === 'sales' && <div className='absolute bg-blue-contrast1 text-white uppercase left-0 top-3 drop-shadow-md
