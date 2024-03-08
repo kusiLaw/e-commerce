@@ -39,7 +39,7 @@ const Checkout = () => {
   console.log(pro)
   return (
     <div className={`${assistant.className} w-full  flex justify-center mt-28 mb-20 1`}>
-      <div className=' w-[90%] flex flex-col-reverse md:flex-row gap-4 justify-center border rounded-md shadow- border-t-4 border-t-blue-contrast'>
+      <div className=' w-[90%] flex flex-col-reverse md:flex-row gap-4 justify-center border rounded-md shadow- border-t-4 border-t-blue-context'>
         <div className='w-full  md:w-[50%]   p-10 md:pr-12'>
           <form>
             <div>
