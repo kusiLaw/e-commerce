@@ -65,7 +65,7 @@ const people = [
   },
 ]
 
-function classNames(...classes) {
+function classNames(...classes:any) {
   return classes.filter(Boolean).join(' ')
 }
 

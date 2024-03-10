@@ -14,7 +14,7 @@ import Invoice from "@/components/orders/invoice";
 import ProductCategory from "@/components/product/product_category";
 // import { Assistant } from "next/font/google";
 import { assistant } from "@/components/font";
-import RelatedProduct from "@/components/product/related_product";
+// import RelatedProduct from "@/components/product/related_product";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer/footer";
 

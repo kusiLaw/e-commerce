@@ -18,7 +18,7 @@ const Checkout = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('visa');
   // const [cardNumber, setCardNumber] = useState('');
 
-  const handleChange = (event:any, fn =()=>{''}) => {
+  const handleChange = (event:any, fn =(e:any)=>{''}) => {
     event.stopPropagation()
     console.log(event.target.value)
     fn(event.target.value);
@@ -91,8 +91,8 @@ const Checkout = () => {
                    
                     <>
                     <input type="radio" id={'paypal'} name={'paypal'} value={'paypal'} className="hidden peer" 
-                                required checked={selectedPaymentMethod === 'paypal'}
-                                onChange={(e)=> handleChange(e, setSelectedPaymentMethod)} disabled />
+                            required checked={selectedPaymentMethod === 'paypal'}
+                            onChange={(e)=> handleChange(e, setSelectedPaymentMethod)} disabled />
                       <label htmlFor={'paypal'} className={`inline-flex items-center justify-between w-fit p-1 px-2
                           text-gray-500 bg-white shadow-sm peer-checked:shadow-blue-context/50 border border-gray-200 rounded-lg cursor-pointer 
                             peer-checked:border-blue-context peer-checked:text-blue-context hover:text-gray-600 hover:bg-gray-100 

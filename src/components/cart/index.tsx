@@ -6,7 +6,7 @@ import CartProduct from './product'
 import Link from 'next/link'
 
 
-export default function Cart({open=false, setOpen=()=>{}} ) {
+export default function Cart({open=false, setOpen=(e:any)=>{}} ) {
   // const [open, setOpen] = useState(isOpen )
 
   return (

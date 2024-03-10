@@ -13,7 +13,7 @@ let filter = {
 const Filter = () => {
   const [selectedValue, setSelectedValue] = useState('');
 
-  const handleChange = (event) => {
+  const handleChange = (event:any) => {
     setSelectedValue(event.target.value);
   };
 
@@ -25,21 +25,21 @@ const Filter = () => {
             <button className='text-xs font- color text-blue-context  my-3 mr-3 hover:cursor-pointer '>Clear all</button>
         </div>
       
-        <TextCollapse title='Categories' open>
+        <TextCollapse title='Categories' open size={''} >
             {['Men', 'Women', 'Kids', 'electronics', 'Latop'].map(list =>(
-                <div className='font-bold py-[1.5px]'>
-                    <CheckBox key={list} name={list} label={list} value={list}/>
+                <div key={list} className='font-bold py-[1.5px]'>
+                    <CheckBox  name={list} label={list} value={list}/>
                 </div>
             ))}
         </TextCollapse>
 
-        <TextCollapse title='Price' open>
+        <TextCollapse title='Price' open size={''} >
            <div className='flex flex-col justify-between gap-2 mr-2 font-bold py-[1.5px]'>
 
               {filter.price.map(list =>(
                   
      
-                <label  className=' flex w-full justify-between ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'>
+                <label key={list}  className=' flex w-full justify-between ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'>
                   {list} 
                     <input
                       type="radio"
@@ -53,15 +53,15 @@ const Filter = () => {
 
             </div>
         </TextCollapse>
-        <TextCollapse title='Tags' open>
+        <TextCollapse title='Tags' open size={''} >
 
               {filter.tags.map(list =>(
-              <div className='font-bold py-[1.5px]'>
+              <div key={list} className='font-bold py-[1.5px]'>
 
-                  <CheckBox key={list} name={list} label={list} value={list}/>
+                  <CheckBox  name={list} label={list} value={list}/>
               </div>
               ))}
-          </TextCollapse>
+        </TextCollapse>
       
       </form>
     </div>

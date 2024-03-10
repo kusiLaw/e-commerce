@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 
- const OrderSummary = ({orders, shipping=0, tax=0}) => {
+ const OrderSummary = ({orders, shipping=0, tax=0}:{orders : Array<any> , shipping :any, tax : any}) => {
   const ordertotal = orders.reduce((acc, order) => (acc + parseFloat(order.price ) ),0)
   return (
     <div>

@@ -22,7 +22,7 @@ const ProductDetails = () => {
 
   const [selectedValue, setSelectedValue] = useState('');
 
-  const handleChange = (event:any, fn =()=>{''}) => {
+  const handleChange = (event:any, fn =(e:any)=>{''}) => {
     fn(event.target.value);
   };
 
@@ -49,8 +49,8 @@ const ProductDetails = () => {
 
             <div className='flex justify-center p-1 w-full gap-2 '>
                 {images.map((img, ind ) => (
-                <div className='relative flex gap-3 w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] '>
-                <Image src={img} key={ind + img} alt={img} fill  onClick={()=>setImage(img)}/>
+                <div key={ind} className='relative flex gap-3 w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] '>
+                    <Image src={img} key={ind + img} alt={img} fill  onClick={()=>setImage(img)}/>
                 </div>
                 ) )
                 }
@@ -63,7 +63,7 @@ const ProductDetails = () => {
                 <h2 className='flex justify-between font-semibold'><span >Hp Enny</span> <span>${390}</span></h2>
             </div>
             <div className='flex gap-4 w-full content-base items-end font-semibold '>
-                <Star/> 
+                <Star rate={0} numberOfStars={0} disableColor={false}/> 
                 <Link href={'#'} className='text-gray-400 '> 1 review</Link>
             </div>
 
@@ -156,9 +156,9 @@ const ProductDetails = () => {
 
 
 
-                    <TextCollapse >
-                        {['1tb drive', 'Antiglare Screen', '12" screen'].map((e)=>(
-                        <li>{e}</li>
+                    <TextCollapse title={''} open={false} size={''}  >
+                        {['1tb drive', 'Antiglare Screen', '12" screen'].map((spec)=>(
+                        <li key={spec}>{spec}</li>
                         ))} 
                     </TextCollapse>
                     

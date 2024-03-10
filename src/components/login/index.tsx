@@ -96,7 +96,7 @@ const Login = () => {
     </div>
 
     <div className='mt-10'>
-      <p>Don't have a Shop account? <Link  href={''} className='text-blue-context text-sm'>Create an account</Link></p>
+      <p>{"Don't have a Shop account? "}<Link  href={''} className='text-blue-context text-sm'>Create an account</Link></p>
     </div>
   </div>
   )

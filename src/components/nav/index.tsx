@@ -27,13 +27,13 @@ const Nav = () => {
   const [displayCart, setDisplayCart] = useState(false)
   const darkRef = useRef(null)
 
-  const handleDropDowns=(setMethod, value)=>{
+  const handleDropDowns=(setMethod:any, value:any)=>{
     setMethod(value)
     setPageCover(value)
   }
 
 
-  const handleCart = (e)=>{
+  const handleCart = (e:any)=>{
     e.stopPropagation()
     console.log(e.target)
     let name  = e.target.name ||  e.target.parentElement.name // solve icon inner element
@@ -118,7 +118,7 @@ const Nav = () => {
           () => setIsOpen(false)
         }>
          <div className='fixed h-full w-[85%] border bg-white '>
-            joijpjpjp'jpjpjpjpjopjpopoj
+            joijpjpjpjpjpjpjpjopjpopoj
          </div>
         </div>}
         {pageCover && <div  className='fixed left-0  right-0 h-full  bg-gray-600/30 shadow-xl z-20'>

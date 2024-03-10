@@ -4,9 +4,14 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import Link from 'next/link';
 
 
-const OrderStatus = ({orderStatus= 'placed', as_invoces = false}) => {
+interface orderStatusProps{
+    orderStatus : 'placed' | 'confirmed' | 'processing' | 'shipped' | 'delivered',
+    as_invoces : boolean
+}
 
-    const orderIndex ={
+const OrderStatus = ({orderStatus= 'placed', as_invoces = false}: orderStatusProps) => {
+
+    const orderIndex : any ={
         placed: 20,
         confirmed: 40,
         processing: 60,

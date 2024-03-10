@@ -12,12 +12,12 @@ const Footer = () => {
     <footer className='bg-gray-50 pt-12 md:pt-16 pb-4 px-4 md:px-20 mt-12 text-black w-full max-w-[1660px]
     border-t border-t-gray-100 mx-auto'>
        <div className='flex flex-col md:flex-row justify-between  w-full '>
-          <Logo fontSize={`text-md md:text-lg`} />
+          <Logo  />
           <div className='flex flex-c justify-end flex-wrap gap-[10%] md:gap-20 '>
               <FooterList header='support'
                list={[ ['Pricing' , '/support'],
                 ['patron' , '/patrons'],
-                ['Guide', '/guide']
+                ['Guide', '/guide'],
 
                 ] }  />
 
@@ -42,7 +42,7 @@ const Footer = () => {
                <p className='font-light'>The latest news, version, and resources, sent to your inbox mnothly.</p>
             </div>
             <div className='flex items-center justify-end gap-4 w-full flex-wrap   '>
-                <input type='email'  required name='email' id='email' minLength='5' maxLength='65'  placeholder='Email Address'
+                <input type='email'  required name='email' id='email' minLength={5} maxLength={65}  placeholder='Email Address'
                             pattern='\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$' title='Invalid Email format'
                                 value={email} onChange={e => setEmail(e.target.value.replace(/\s+/g, '')) }
                         className='w- py-1 px-1 rounded-sm  border-collapse valid:border-2  valid:border-green-500 invalid:border-2 text-default_blue

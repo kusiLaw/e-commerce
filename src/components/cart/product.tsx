@@ -36,7 +36,7 @@ const CartProduct = () => {
                   <div>
                     <div className="flex justify-between text-base text-gray-900">
                       <h3>
-                        <a href={product.href}>{product.name}</a>
+                        <a href={product.link}>{product.name}</a>
                       </h3>
                       <p className="ml-4">{product.price}</p>
                     </div>

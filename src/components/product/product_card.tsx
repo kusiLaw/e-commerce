@@ -6,11 +6,11 @@ import WishListButton from './wishlist_button'
 export interface  Product {
   name : string ;
   image : string;
-  tag: 'sales' | 'hot' | 'new'
+  tag: string
   id: string | number,
   link: string,
   color: string | Array<string>,
-  total_rate: string |  number,
+  // total_rate: string |  number,
   description:string
   price: Number | string
 }

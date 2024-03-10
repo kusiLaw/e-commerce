@@ -5,7 +5,7 @@ const OrderInvoice = () => {
   return (
     <div>
       {/* <Invoice/> */}
-      <Orders/>
+      <Orders orderStatus={'placed'}/>
       </div>
   )
 }
