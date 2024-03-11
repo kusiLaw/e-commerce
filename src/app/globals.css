@@ -16,3 +16,9 @@
 
 }
 
+.img_4 {
+  background-image: url('/img/4.png') ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16% bottom;
+}

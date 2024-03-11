@@ -259,7 +259,7 @@ export const products = [
     },
     {
       name : 'Hector Gibbons',
-      rate : 5,
+      rate : 3.4,
       image : '/cust1.jpg',
       comment : 'Before getting the Ruck Snack, I struggled my whole life with pulverized snacks, endless crumbs, and other heartbreaking snack catastrophes. Now, I can stow my snacks with confidence and style!'
     },
