@@ -22,3 +22,17 @@
   background-repeat: no-repeat;
   background-position: right 16% bottom;
 }
+
+.img_1 {
+  background-image: url('/img/african_dress.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16% top 30%;
+}
+
+.img_kente {
+  background-image: url('/img/african_dress.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16% top 30%;
+}
