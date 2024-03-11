@@ -36,3 +36,11 @@
   background-repeat: no-repeat;
   background-position: right 16% top 30%;
 }
+
+.img_direction {
+  background-image: url('/img/direction_2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 20% top 30%;
+
+}

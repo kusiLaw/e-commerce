@@ -26,11 +26,11 @@ export default function Home() {
   return (
     <>
       <Nav/>
-      <div className="mt-[4.8rem] w-full">
+      <div className="mt-[4.9rem] w-full">
         <main className="relative w-full ">
           {/* h-[768px]  [calc(h-screen - [4rem])]   [calc(768px
              - [4rem])] */}
-          <section className={`relative    h-fit md:h-[calc(768px-5rem)]  `}>
+          <section className={`relative    h-fit md:h-[calc(768px-5.2rem)]  `}>
             
             {/* <div className=" bg-[#05876b]/30 h-full flex flex-col justify-center items-center  ">
               <div className="p-8 img_1 lg:ml-[8%] lg:mt-[4rem] h-full  w-[90%] m-auto bg-[#eee]/90 lg:bg-transparent" >
@@ -48,7 +48,7 @@ export default function Home() {
             </div> */}
 
             
-            <div className=" bg-[#418621]/30 h-full flex flex-col justify-center items-center  ">
+            {/* <div className=" bg-[#418621]/30 h-full flex flex-col justify-center items-center  ">
               <div className="p-8 img_kente lg:ml-[8%] lg:mt-[4rem] h-full  w-[90%] m-auto bg-[#eee]/90 lg:bg-transparent " >
                 <p className="font-bold te text-[2rem] md:text-[2.5rem] text-blue-context lg:text-inherit mt-4 capitalize">Africa Cloth ?</p>
                 <p className="font-bold text-[1.8rem] md:text-[2.5rem] text-blue-contrast lg:text-black/80 c">Best suited for celebration!</p>
@@ -61,7 +61,25 @@ export default function Home() {
                   <IoIosArrowForward/>
                 </button>
              </div>
+            </div> */}
+
+ 
+            <div className=" bg-[#bbbec8]/30 h-full flex flex-col justify-center items-center  ">
+              <div className="p-8 img_direction lg:ml-[8%] lg:mt-[4rem] h-full   w-[90%] m-auto bg-[#d3d1df]/90 lg:bg-transparent " >
+                <p className="font-bold te text-[2rem] md:text-[2.5rem] text-blue-context lg:text-inherit mt-4 ">Life made easy with Us</p>
+                <p className="font-bold text-[1.8rem] md:text-[2.5rem] text-blue-contrast lg:text-black/80 c">{ "Can't find your item here ? "}</p>
+                <p className="mt-3 text-wite text-inherit text-wrap">You can tell us the item you want and will delivery to you at you door. <br/> </p>
+                <button
+                  type="submit"
+                  className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-blue-context font-semibold mt-8  px-4 py-3  font- leading-6 text-lg capitalize
+                  text-white shadow-sm shadow-blue-context/50 hover:shadow-md hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
+                  Tell us what you want
+                  <IoIosArrowForward/>
+                </button>
+             </div>
             </div>
+
+
           </section> 
 
           <section className="bg-back py-6">
