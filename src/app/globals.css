@@ -16,31 +16,28 @@
 
 }
 
+
+ .img_1, .img_4, .img_kente, .img_direction{
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
 .img_4 {
   background-image: url('/img/4.png') ;
-  background-size: contain;
-  background-repeat: no-repeat;
   background-position: right 16% bottom;
 }
 
 .img_1 {
   background-image: url('/img/1.png');
-  background-size: contain;
-  background-repeat: no-repeat;
   background-position: right 16% top 30%;
 }
 
 .img_kente {
-  background-image: url('/img/african_dress.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-image: url('/img/african_dress_edit.png');
   background-position: right 16% top 30%;
 }
 
 .img_direction {
-  background-image: url('/img/direction_2.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-image: url('/img/direction_3.png');
   background-position: right 20% top 30%;
 
 }
