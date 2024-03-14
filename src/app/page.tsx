@@ -1,25 +1,14 @@
 
-import Login from "@/components/login";
-import Image from "next/image";
-import Cart from "@/components/cart";
-import Link from "next/link";
 
-import { Fragment } from 'react'
 import ProductCard from "@/components/product/product_card";
-import ProductDetails from "@/components/product/product_detail";
-import ProgressBar from "@/components/form/progress_bar";
-import ProductReview from "@/components/product_reviews";
-import Orders from "@/components/orders/order";
-import Invoice from "@/components/orders/invoice";
-import ProductCategory from "@/components/product/product_category";
-// import { Assistant } from "next/font/google";
 import { assistant } from "@/components/font";
-// import RelatedProduct from "@/components/product/related_product";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer/footer";
 import { IoIosArrowForward } from "react-icons/io";
 import { WelcomeCarousel } from "@/components/carousel";
 import ProductCategoryCard from "@/components/product/category_card";
+import { products } from "@/data/mock";
+import VideoSection from "./video_section";
 
 
 
@@ -84,7 +73,7 @@ export default function Home() {
           </section>
           
           <section className="w-full mt-10 mb-20">
-            <h2 className=" text-center flex flex-col gap-3 text-3xl font-medium capitalize after:h-[2px] after:w-12 after:self-center  after:bg-red-600">
+            <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center  after:bg-red-600`}>
               Categories
             </h2>
             <div className="flex mt-14 px-3 justify-evenly gap-10">
@@ -119,7 +108,6 @@ export default function Home() {
             </div>
  
           </section>
-          {/* <ProductCategory/> */}
           
           {/* <section className={`relative    h-fit md:h-[calc(768px-5.2rem)]  `}>
 
@@ -151,12 +139,6 @@ export default function Home() {
 
 
 
-          <section className="bg-back py-">
-            {/* <div className=" ">
-              <h2 className={`${assistant.className} font-medium text-2xl py-`}>Feature Products</h2>
-      
-            </div> */}
-          </section>
 
           
           <section className="bg-[#7aa8c5]/30 py-8 h-[30rem] bg-fixed -z-10 pt-6 img_4">
@@ -177,13 +159,12 @@ export default function Home() {
     
           </section>
 
-          <section className="h-[5rem] z-30">
-            <div className=" ">
-              <h2 className={`${assistant.className} font-medium text-2xl py-10`}>Feature Products</h2>
-                 {/* <Image src={'/img/4.png'} alt='' width={600} height={840} className="align-center drop-shadow-2xl"/> */}
-
-            </div>
+     
+          <section className="">
+              <VideoSection/>
           </section>
+          
+
         </main>
       </div>
       <Footer/>
