@@ -158,7 +158,23 @@ export default function Home() {
             </div>
     
           </section>
-
+     <section className="bg-back mt-10 mb-20 pt-10">
+            <div className=" ">
+              <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center  after:bg-red-600`}>
+                featured products
+              </h2>
+              
+              <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4   xl:grid-cols-5 xs:overflow-y-scro">
+                {
+                    products.slice(0,10).map(data =>(
+                    <div key={data.id}>
+                        <ProductCard {...data}/>
+                    </div>
+                    ))
+                }
+            </div>
+            </div>
+          </section>
      
           <section className="">
               <VideoSection/>
