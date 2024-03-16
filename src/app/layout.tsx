@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${open_Sans.className} antialiased`}>
         {/* <StyledJsxRegistry> */}
            <div className="flex flex-col items-center text-blue-950 ">
-             <div className="max-w-[1660px] w-full  ">
+             <div className="max-w-[1660px] w-full mx-auto ">
                     {children}
              </div>
           </div>
