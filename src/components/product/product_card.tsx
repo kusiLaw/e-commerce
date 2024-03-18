@@ -18,13 +18,13 @@ export interface  Product {
 
 const  ProductCard = ({name, image, tag, color,price, link }: Product) => {
   return (
-    <div  className='relative  group  border-[1px] flex-shrink
-                   w-[11.5rem] lg:w-[12.5rem] h-fit my-2 pt-1 mx-auto px-auto' >
+    <div  className='relative  group  border-[1px] 
+                   w-[11.5rem] lg:w-[12.5rem] h-fit my-2 pt-1 mx-auto px-auto grow shrink' >
       <div className='w-full relative flex flex-col items-center justify-center gap-2 mx-auto flex-shrink '>
  
            <div className=' flex relative justify-center content-center
            h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem] 
-           shadow-xs bg-gray-50 rounded-md mb- overflow-hidden flex-shrink'>
+           shadow-xs bg-gray-50 rounded-md mb- overflow-hidden shrink grow'>
               <Link href={link} >
                     <Image src={image} alt={''}
                     fill

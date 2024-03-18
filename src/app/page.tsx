@@ -136,7 +136,7 @@ export default function Home() {
                 featured products
               </h2>
               
-              <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4   xl:grid-cols-5 xs:overflow-y-scro">
+              <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4   xl:grid-cols-5 ">
                 {
                     products.slice(0,10).map(data =>(
                     <div key={data.id}>
