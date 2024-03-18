@@ -19,7 +19,7 @@ export default function Home() {
       <Nav/>
       <div className="mt-[4.5rem] w-full ">
         <main className="relative w-full px-2 md:px-3  ">
-         <section className={`relative    h-fit md:h-[calc(768px-5.5rem)]  `}>
+          <section className={`relative    h-fit md:h-[calc(768px-5.5rem)]  `}>
            <WelcomeCarousel>
             <div className=" bg-[#05876b]/30 h-full flex flex-col justify-center items-center  ">
               <div className="p-8 img_1 lg:ml-[8%] lg:mt-[4rem] h-full  w-full m-auto bg-[#eee]/90 lg:bg-transparent" >
@@ -68,14 +68,14 @@ export default function Home() {
              </div>
             </div>
 
-          </WelcomeCarousel> 
+           </WelcomeCarousel> 
           </section>
           
           <section className="w-full mt-20 mb-20">
             <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center  after:bg-red-600`}>
               Categories
             </h2>
-            <div className="flex mt-14  justify-evenly gap-10">
+            <div className="grid xsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  place-items-center mt-14 lg:mt-16 gap-4">
               {[ {
                       image: "women_collection",
                       text: "women",
@@ -102,7 +102,12 @@ export default function Home() {
                       img_width :450
                     }
                   
-              ].map(item => <ProductCategoryCard {...item} key={item.text} />)
+              ].map(item =>
+              (
+                <div key={item.text} className="flex flex-shrink flex-grow justify-center flex-auto w-full  ">
+                   <ProductCategoryCard {...item}  />
+                </div>
+              ))
               }
             </div>
  
@@ -170,7 +175,7 @@ export default function Home() {
             </div>
           </section>
      
-          <section className="">
+          <section className="hidden lg:block">
               <VideoSection/>
           </section>
           
