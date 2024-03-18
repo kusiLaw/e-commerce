@@ -9,7 +9,7 @@ import { CustomersReview } from '@/type/types'
 const CustomerReview = ({ name, rate, image, comment, onPage = false }: CustomersReview) => {
   if (onPage) {
      return (
-       <div className="w-full p-4 md:p-8 mt-16 mb-2 bg-white drop-shadow-md  flex flex-col gap-4 justify-center rounded-lg">
+       <div className="w-full p-4 md:p-8 mt-16 mb-2 bg-gray-50 drop-shadow-md  flex flex-col gap-4 justify-center rounded-lg">
         <p className='h-[6rem]  text-ellipsis overflow-hidden'>{`" ${comment} " `}</p>
         <Star rate={rate} numberOfStars={5} disableColor={false}   />
         <div className="flex items-center gap-4 mt-2">

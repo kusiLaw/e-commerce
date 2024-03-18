@@ -112,34 +112,7 @@ export default function Home() {
             </div>
  
           </section>
-    
-          {/* <section className={`relative    h-fit md:h-[calc(768px-5.2rem)]  `}>
-
-            <div className="  h-full w-full">
-                <div className=" flex bg-[#bbbec8]/30 w-full h-full bg-[#d3d1df lgbg-transparent  " >
-                  
-                  <div className=" flex flex-col items-center justify-center bg-[#f6f8f6] w-[80%]  h-full">
-                      <p className="font-bold te text-[2rem] md:text-[2.5rem] text-blue-context lg:text-inherit mt-4 ">Life made easy with Us</p>
-                      <p className="font-bold text-[1.8rem] md:text-[2.5rem] text-blue-contrast lg:text-black/80 c">{ "Can't find your item here ? "}</p>
-                      <p className="mt-3 text-wite text-inherit text-wrap">You can tell us the item you want and will delivery to you at you door. <br/> </p>
-                      <button
-                        type="submit"
-                        className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-blue-context font-semibold mt-8  px-4 py-3  font- leading-6 text-lg capitalize
-                        text-white shadow-sm shadow-blue-context/50 hover:shadow-md hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
-                        Tell us what you want
-                        <IoIosArrowForward/>
-                      </button>
-                  </div>
-                  <div className=" relative w-[20%] h-full  bg-slate- shadow-inner ">
-                    <div className="absolute z-10 -left-[10.6rem] bg-ed-300 -bottom-[3rem] w-fit h-full">
-                        <Image width={350} height={400} src={'/img/direction_2.png'} alt=""
-                          className="ml-0 "/>
-                    </div>
-                  </div>
-      
-              </div>
-            </div>
-          </section> */}          
+          
           <section className="bg-[#7aa8c5]/30 py-8 h-[30rem] bg-fixed -z-10 pt-6 img_4">
             <div className=" mt-3 h-full">
                <div className="p-8 lg:ml-[8%] lg:mt-[4rem] h-full bg-[#eee]/80 w-[90%] m-auto  lg:bg-transparent" >
