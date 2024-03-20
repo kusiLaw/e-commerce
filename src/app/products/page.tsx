@@ -7,15 +7,17 @@ import Filter from '@/components/filter'
 import { CiSearch } from "react-icons/ci";
 import { BiGridAlt } from "react-icons/bi";
 import { FaList } from "react-icons/fa6";
-
-
-
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Product',
+}
 
 
 
 const Products = () => {
   return (
-    <div className='w-full h-auto pt-4 icon_bg'>
+    <div className='w-full h-auto pt-4 icon_bg px-2 md:px-3'>
       <div className='text-xs text-gray-500 ml-[2%]'>
 
         <Link href={'/'} className='hover:text-gray-700'>Home </Link> / 

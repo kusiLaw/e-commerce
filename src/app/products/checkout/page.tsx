@@ -1,9 +1,5 @@
 'use client'
 import { useState } from 'react'
-
-import Invoice from '@/components/orders/invoice'
-import Orders from '@/components/orders/order'
-import React from 'react'
 import OrderSummary from '@/components/orders/order_summary'
 import Image from 'next/image'
 import { products} from '@/data/mock'
