@@ -63,7 +63,7 @@ const ProductDetails = () => {
                 <h2 className='flex justify-between font-semibold'><span >Hp Enny</span> <span>${390}</span></h2>
             </div>
             <div className='flex gap-4 w-full content-base items-end font-semibold '>
-                <Star rate={0} numberOfStars={0} disableColor={false}/> 
+                <Star rate={4} numberOfStars={5} disableColor={false}/> 
                 <Link href={'#'} className='text-gray-400 '> 1 review</Link>
             </div>
 

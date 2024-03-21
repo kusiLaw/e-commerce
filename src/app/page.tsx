@@ -7,8 +7,6 @@ import { WelcomeCarousel } from "@/components/carousel";
 import ProductCategoryCard from "@/components/product/category_card";
 import { customerPageReview, products } from "@/data/mock";
 import VideoSection from "./video_section";
-import Image from "next/image";
-import Star from "@/components/stars_rating/star";
 import CustomerReview from "@/components/product_reviews/customer_review";
 
 

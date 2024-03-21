@@ -57,7 +57,7 @@ export const WelcomeCarousel = ({ children }) => {
 }
 
 
-const Carousel = ({products}) => {
+const Carousel = ({products, }) => {
   return (
     <Swiper
     slidesPerView={1}

@@ -1,5 +1,6 @@
 'use client'
-import React, { useRef, useReducer,useState } from 'react'
+import React, { useRef, useReducer, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image';
 import Logo from '../logo/logo';
 import Cart from '../cart';
@@ -15,7 +16,10 @@ const Nav = () => {
   const [pageCover, setPageCover] = useState(false)
   const [displayCart, setDisplayCart] = useState(false)
   const darkRef = useRef(null)
+  const pathname = usePathname()
 
+  console.log(pathname)
+  
   const handleDropDowns=(setMethod:any, value:any)=>{
     setMethod(value)
     setPageCover(value)
@@ -59,9 +63,11 @@ const Nav = () => {
                         <p className='hover:text-blue-context '>Features</p>
                       </div>
                     </div> */}
-                    <div className=' relative text-lg  h-full  hover:border-b group hover:border-blue-context border-b  transition-all duration-500'>
+                 <div className={` relative text-lg  h-full  hover:border-b group hover:border-blue-context border-b 
+                     transition-all duration-500 ${pathname === '/products' ? 'border-b-blue-context' : ' '}`}>
                       <div className='hidden md:inline-flex h-full items-center justify-center '>
-                        <Link href={'/products'} className='hover:text-blue-context border-r-2 pr-4 capitalize group-hover:text-blue-context' >products</Link>
+                        <Link href={'/products'} className={`hover:text-blue-context border-r-2 pr-4 capitalize 
+                         group-hover:text-blue-context link  ` }>products</Link>
                       </div>
                    </div>
                 
@@ -107,7 +113,7 @@ const Nav = () => {
             joijpjpjpjpjpjpjpjopjpopoj
          </div>
         </div>}
-        {pageCover && <div  className='fixed left-0  right-0 h-full  bg-black/10 shadow-xl z-20'>
+        {pageCover && <div  className='fixed left-0  right-0 h-full  bg-gray-600/20  transition-opacity shadow-xl z-20'>
                 
                 </div>}
       </header>

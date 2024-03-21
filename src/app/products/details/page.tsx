@@ -1,10 +1,7 @@
 import React from 'react'
 import ProductDetails from '@/components/product/product_detail'
-import Pegination from '@/components/pagination'
-import ProductReviewStatistics from '@/components/product_reviews/product_review_satistics'
 import ProductReview from '@/components/product_reviews'
 import { products } from '@/data/mock'
-import ProductCard from '@/components/product/product_card'
 import Carousel from '@/components/carousel'
 
 const Details = () => {
@@ -17,8 +14,10 @@ const Details = () => {
          <ProductReview/>
       </div>
       <div className='my-10'>
-        <h3 className='text-xl font-medium my-10'>Related Product</h3>
-        <Carousel products={products} />
+          <h2  className={`mt-20 mb-14 text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center  after:bg-red-600`}>
+          related product
+        </h2>
+        <div className='m-2 lg:m-6'> <Carousel products={products} /> </div>
       </div>
     </div>
   )
