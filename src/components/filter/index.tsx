@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import CheckBox from '../form/checkbox'
 import { TextDecoderStream } from 'stream/web'
 import TextCollapse from '../collapsible_dev/collapsible_dev'
+import Star from '../stars_rating/star'
 
 let filter = {
 
@@ -33,6 +34,16 @@ const Filter = () => {
             ))}
         </TextCollapse>
 
+    
+       <TextCollapse title='Price' open size={''} >
+            {filter.price.map(list =>(
+                <div key={list} className='font-bold py-[1.5px]'>
+                    <CheckBox  name={list} label={list} value={list}/>
+                </div>
+            ))}
+        </TextCollapse>
+
+{/* 
         <TextCollapse title='Price' open size={''} >
            <div className='flex flex-col justify-between gap-2 mr-2 font-bold py-[1.5px]'>
 
@@ -52,7 +63,22 @@ const Filter = () => {
                 ))}
 
             </div>
+        </TextCollapse> */}
+
+        <TextCollapse title='Rating' open size={''} >
+            {['5','4','3','2','1'].map(list =>(
+                <div key={list} className='font-bold py-[1.5px] my-1'>
+                    <div className={`flex  justify-between items-center`}>
+                       <label htmlFor={list} className='ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'>
+                        <Star rate={parseInt(list)} numberOfStars={5} disableColor={true}/>
+                      </label>
+                        <input type="checkbox" id="scales" name={list}className='w-6 h-[16px] text-blue-context bg-black border-gray-300 rounded focus:ring-blue-500 ' />
+                  </div>
+                </div>
+            ))}
         </TextCollapse>
+
+
         <TextCollapse title='Tags' open size={''} >
 
               {filter.tags.map(list =>(
