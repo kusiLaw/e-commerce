@@ -9,18 +9,19 @@ import TextCollapse from '@/components/collapsible_dev/collapsible_dev'
 import { assistant } from '../font'
 import { RadioGroup } from '@headlessui/react'
 import { LiaRulerHorizontalSolid } from "react-icons/lia";
+import ProductColor from './color'
 
 
 const images = ['/img/hp_envy_1.jpg','/img/hp_envy_2.jpg','/img/hp_envy_3.jpg','/img/hp_envy_4.jpg']
 
 const ProductDetails = () => {
   const [image, setImage] = useState(images[0])
-  const [selectedColor, setSelectedColor] = useState('')
+
   const [selectedSize, setSelectedSize] = useState('')
 
 
 
-  const [selectedValue, setSelectedValue] = useState('');
+  // const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange = (event:any, fn =(e:any)=>{''}) => {
     fn(event.target.value);
@@ -69,37 +70,11 @@ const ProductDetails = () => {
 
             <div className='flex flex-col  gap-6 mt-6'> 
                 <div className=''>
-                    <h3 className="font-medium text-gray-900 mb-1">Color</h3>
-                    <ul className="w-full flex gap-4 flex-wrap flex-shrink ">
-                     { 
-                      [{name: 'Silver', code: '#C0C0C0'}, {name: 'black', code: '#000000'},
-                      {name: 'Navy', code: '#000080'},].map((color) => (
-                        <li key={color.code}>
-                          <input type="radio" id={color.name} name={color.name} value={color.code} className="hidden peer" required  checked={selectedColor === color.code}
-                          onChange={(e)=> handleChange(e, setSelectedColor)} />
-                          <label htmlFor={color.name} className={`custom inline-flex items-center justify-between h-[1.8rem] w-[1.8rem] rounded-full 
-                           border   cursor-pointer peer-checked:ring-2 peer-checked:ring-offset-4 
-                            
-                            `}>   
-                            <p className='sr-only'>{color.name}</p>  
-
-                               <style jsx>{
-                                    `
-                                    .custom { 
-                                      
-                                      background: ${color.code};
-                                      --tw-ring-color: ${color.code}
-                                      }
-                                    `
-                                    
-                                  }          
-                              </style>                      
-                          </label>
-                       </li>
-                      ))
-                
-                      }
-                    </ul>
+                   <h3 className="font-medium text-gray-900 mb-1">Color</h3>
+                   <div >
+                       <ProductColor />
+                    </div>
+                    
                 </div>
                 <div className=''>
                     <div className='flex justify-between mb-1'>
