@@ -8,20 +8,30 @@ export interface  CustomersReview {
   }
 
   
-export interface  Product {
-    name : string ;
-    rate : number | string;
-    image : string;
+export interface Productlist {
+  id: number | string,
+  name: string,
+  product_image : string | Array<string>,
+  tag: 'sales' | 'hot' | 'new' | 'default',
+  saling_price: number,
+  color: any | {
+    text: string
+    code: string
+ },
+ colorCode : boolean | null | undefined
+}
+  
+export interface  ProductDetail {
+  name: string;
+  product_code: string | undefined | null
+  quantity: number | string,
+    rate : number | string,
+    image : string,
     tag: 'sales' | 'hot' | 'new'
     id: string | number,
     link: string,
     color: string | Array<string>,
     total_rate: string |  number
 
-    // reviews: Array<{ 
-    //   comment : string,
-    //   customer_name: string,
-    //   customer_image: string,
-    //   rate: number | string,
-    // }>;
   }
+
