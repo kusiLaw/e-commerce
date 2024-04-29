@@ -63,7 +63,7 @@ export default function Cart({open=false, setOpen=(e:any)=>{}} ) {
 
 
                     {/** checkout footer */}
-                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                    <div className="border-t shadow-xl g-gray-50 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
                         <p>$262.00</p>

@@ -19,7 +19,7 @@ const CartProduct = () => {
       <div className={`${assistant.className} mt-8 `}>
         <div className="flow-root">
           <ul role="list" className="-my-6 divide-y divide-gray-200">
-            {products.slice(2,4).map((product) => (
+            {products.slice(2,6).map((product) => (
               <li key={product.id} className="flex py-6">
                 
                 <div className=" h-24 w-24 flex-shrink-0 flex content-center justify-center overflow-hidden rounded-md border border-gray-200">
