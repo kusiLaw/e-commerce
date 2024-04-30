@@ -13,10 +13,10 @@ export interface Productlist {
   name: string,
   product_image : string | Array<string>,
   tag: 'sales' | 'hot' | 'new' | 'default',
-  saling_price: number,
+  price: number,
   color: any | {
-    text: string
-    code: string
+    color: string
+    color_code: string
  },
  colorCode : boolean | null | undefined
 }

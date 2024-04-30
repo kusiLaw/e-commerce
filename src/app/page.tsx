@@ -15,20 +15,20 @@ import { RiSecurePaymentLine } from "react-icons/ri";
 import { BsCart2 } from "react-icons/bs";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { BiCart } from "react-icons/bi";
-
+import Link from "next/link";
 
 
 export default async function Home() {
-  const products = await getData()
-
+  const products = await getData('?page=1&count=10')
+  console.log('backend n/', products)
 
   return (
     <>
       <Nav/>
-      <div className="mt-[4.5rem] w-full ">
+      <div className="mt-[4.45rem] w-full ">
         <main className="relative w-full px-2 md:px-3  ">
 
-          <section className="bg-[#7aa8c5]/30 py-8 h-[30rem] bg-fixed -z-10 pt-6 img_4">
+          <section className="bg-[#7aa8c5]/30 py-8 h-[31rem] bg-fixed -z-10 pt-6 img_4">
             <div className=" mt-3 h-full">
                <div className="p-8 lg:ml-[8%] lg:mt-[4rem] h-full bg-[#eee]/80 w-[90%] m-auto  lg:bg-transparent" >
                       <p className="font-bold te text-[2rem] md:text-[2.5rem]">Hurry Up!</p>
@@ -114,15 +114,19 @@ export default async function Home() {
                 featured products
               </h2>
               
-              <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4   xl:grid-cols-5 ">
+              <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3 gap-4 md:gap-6 md:grid-cols-4   xl:grid-cols-5 ">
                 { 
-                    products && products.map((data:any) =>(
+                    products && products.results.map((data:any) =>(
                     <div key={data.id}>
                         <ProductCard {...data } colorCode = {false}/>
                     </div>
                     ))
                 }
-            </div>
+              </div>
+
+              <div className="w-full flex justify-center md:justify-end mt-10 md:pr-4 lg:pr-10">
+                    <Link href={'/products'} className="capitalize py-2 px-4 border bg-gray-50 md:border-none text-sm  cursor-pointer">view More</Link>
+              </div>
             </div>
           </section>
      
