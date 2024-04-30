@@ -8,6 +8,9 @@ import { CiSearch } from "react-icons/ci";
 import { BiGridAlt } from "react-icons/bi";
 import { FaList } from "react-icons/fa6";
 import { Metadata } from 'next'
+import { getData } from '@/lib/backend/django/server_actions'
+
+
 
 export const metadata: Metadata = {
   title: 'Product',
@@ -15,7 +18,8 @@ export const metadata: Metadata = {
 
 
 
-export default  function Products() {
+export default async function Products() {
+  const products = await getData()
 
   return (
     <div className='w-full h-auto pt-4 icon_bg px-2 md:px-3'>
@@ -26,7 +30,7 @@ export default  function Products() {
       <div className='flex  w-full pt-4'>
         
         <div className='hidden sticky top-0 lg:block md:w-[14rem] lg:w-[16rem] h-fit  shadow-sm divide- gap-3'>
-          <Filter/>
+          <Filter />
         </div>
          <div className='w-full '>
             <div className="flex  w-full justify-end items-center mt-2 mb-6 pr-10">
@@ -49,14 +53,14 @@ export default  function Products() {
                </div>
             </div>
             
-            <div className="w-full m-auto grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
-                {/* {
+            <div className="w-full m-auto grid xsm:grid-cols-2 gap-8 sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
+                {
                     products && products.map(data =>(
                     <div key={data.id}>
                         <ProductCard {...data} colorCode={ false} />
                     </div>
                     ))
-                } */}
+                }
             </div>
             <div className='flex w-full justify-center my-16'>
                 <Pagination/>
@@ -68,4 +72,3 @@ export default  function Products() {
   )
 }
 
-// export default Products
