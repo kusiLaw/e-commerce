@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 // import { FaMinus, FaPlus } from 'react-icons/fa'
 import { FaPlus, FaMinus } from "react-icons/fa6";
-import { FiPlus } from "react-icons/fi";
 
 
 
+interface props {
+   title: string,
+   open: boolean,
+   size: string,
+   children: React.ReactNode,
+}
 
-const TextCollapse = ({title= 'Features', children , open = false, size =''}) => {
+
+const TextCollapse = ({ title= 'Features', children , open = false, size =''} : props) => {
   const [display, setDisplay] = useState(open)
 
 

@@ -6,26 +6,58 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/effect-fade'
 
 import './styles.css';
 
 // import required modules
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 import ProductCard from '../product/product_card';
 
-// const swiper = new Swiper('.swiper-container', {
-//     // ... other parameters
-//     navigation: {
-//       nextEl: '.custom-next-button',
-//       prevEl: '.custom-prev-button',
-//     },
-//   });
 
-const Carousel = ({products}) => {
+export const WelcomeCarousel = ({ children }) => {
+  return (
+    <Swiper
+    slidesPerView={1}
+    spaceBetween={10}
+    pagination={{
+      clickable: true,
+    }}
+    
+   autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
+      
+    navigation={true}
+    modules={[Pagination, Navigation, Autoplay]}
+    className="mySwiper"
+  >
+
+   {
+       
+        <>
+          {children.map((child, index) => (
+            <SwiperSlide key={index} >
+               {child}
+             </SwiperSlide>
+          ))
+         
+          }
+            
+       
+          
+          </>
+        
+   
+    }
+  </Swiper>
+  )
+}
 
 
-
+const Carousel = ({products, }) => {
   return (
     <Swiper
     slidesPerView={1}

@@ -1,14 +1,18 @@
 'use client'
 import { Fragment, useState } from 'react'
+import { useRouter, usePathname, redirect } from 'next/navigation'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import CartProduct from './product'
 import Link from 'next/link'
+import { todo } from 'node:test'
 
 
-export default function Cart({open=false, setOpen=()=>{}} ) {
+export default function Cart({open=false, setOpen=(e:any)=>{}} ) {
   // const [open, setOpen] = useState(isOpen )
-
+  const router = useRouter()
+  const pathname = usePathname()
+  
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-40 w-full " onClose={setOpen}>
@@ -59,7 +63,7 @@ export default function Cart({open=false, setOpen=()=>{}} ) {
 
 
                     {/** checkout footer */}
-                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                    <div className="border-t shadow-xl g-gray-50 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
                         <p>$262.00</p>
@@ -68,11 +72,23 @@ export default function Cart({open=false, setOpen=()=>{}} ) {
                       
                       {/** button */}
                       <div className="mt-6">
-                        <button
+                        <button 
                           // href="#"
                           className="flex items-center justify-center w-full rounded-md border border-transparent bg-blue-context hover:bg-blue-hover
                            px-6 py-2.5 text-base font-medium text-white shadow-sm"
-                           onClick={() => setOpen(false)}
+                          onClick={() => {
+                            // todo: handle redirect base on different page
+                            // if (pathname.split('/').includes('details')) {
+                            //   console.log(pathname.split('/'))
+                            //      router.push('/checkout')
+                            // } else {
+                            //   router.push('products/checkout')
+                            // }
+                                  
+
+                            setOpen(false);
+
+                          }}
                         >
                           Checkout
                         </button>

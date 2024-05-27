@@ -7,15 +7,18 @@ import Filter from '@/components/filter'
 import { CiSearch } from "react-icons/ci";
 import { BiGridAlt } from "react-icons/bi";
 import { FaList } from "react-icons/fa6";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Product',
+}
 
 
 
+export default  function Products() {
 
-
-
-const Products = () => {
   return (
-    <div className='w-full h-auto pt-4 '>
+    <div className='w-full h-auto pt-4 icon_bg px-2 md:px-3'>
       <div className='text-xs text-gray-500 ml-[2%]'>
 
         <Link href={'/'} className='hover:text-gray-700'>Home </Link> / 
@@ -47,13 +50,13 @@ const Products = () => {
             </div>
             
             <div className="w-full m-auto grid xsm:grid-cols-2  sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
-                {
-                    products.map(data =>(
+                {/* {
+                    products && products.map(data =>(
                     <div key={data.id}>
-                        <ProductCard {...data}/>
+                        <ProductCard {...data} colorCode={ false} />
                     </div>
                     ))
-                }
+                } */}
             </div>
             <div className='flex w-full justify-center my-16'>
                 <Pagination/>
@@ -65,4 +68,4 @@ const Products = () => {
   )
 }
 
-export default Products
+// export default Products

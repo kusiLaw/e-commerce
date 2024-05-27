@@ -3,7 +3,7 @@ import React from 'react'
 import { RiArrowRightSFill } from "react-icons/ri";
 
 
-const ProfileDropDown = ({isLogin = false, eventfn, args=''}) => {
+const ProfileDropDown = ({isLogin = false, eventfn, args=''} : {isLogin: boolean, eventfn : any, args:any }) => {
  if(!isLogin){
     return(
         <div className='absolute bg-white min-w-[15rem] h-fit z-30 shadow-lg right-0 p-2 '
@@ -12,7 +12,7 @@ const ProfileDropDown = ({isLogin = false, eventfn, args=''}) => {
                         <h2 className='w-full text-black text-base py-2'>My Account:</h2>
                         <ul className=' font-light text-wrap text-sm py-2 list-disc'>
                         {['Place orders quickly and easily','View orders and track your shipping status', 'Request product not found on site and more'].map(el =>(
-                          <li className='flex items-center gap-1 mt-2'>
+                          <li key={el} className='flex items-center gap-1 mt-2'>
                           <span className='text-base'><RiArrowRightSFill/></span>  <p>{el}</p>
                           </li>
                         ))

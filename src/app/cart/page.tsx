@@ -1,8 +1,6 @@
 
 import CartProduct from '@/components/cart/product'
-import Invoice from '@/components/orders/invoice'
 import OrderSummary from '@/components/orders/order_summary'
-import Orders from '@/components/orders/order'
 import React from 'react'
 import { products } from '@/data/mock'
 import Link from 'next/link'

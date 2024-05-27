@@ -8,13 +8,13 @@ import Image from 'next/image'
 import OrderStatus from './order_status'
 import OrderSummary from './order_summary';
 
-const Orders = ({orderStatus = 'placed'}) => {
+const Orders = ({orderStatus = 'placed'}:{orderStatus : 'placed' | 'confirmed' | 'processing' | 'shipped' | 'delivered',}) => {
 
 
   return (
     <div className='p-3 md:p-10 bg-gray-50 '>
         <div className=''>
-          <OrderStatus orderStatus= {orderStatus}/>
+          <OrderStatus orderStatus={orderStatus} as_invoces={false}/>
         </div>
 
         <div className='flex flex-col gap-10 mt-16 md:flex-row md:gap-[5%]'>

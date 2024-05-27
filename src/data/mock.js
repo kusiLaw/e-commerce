@@ -259,7 +259,30 @@ export const products = [
     },
     {
       name : 'Hector Gibbons',
+      rate : 3.4,
+      image : '/cust1.jpg',
+      comment : 'Before getting the Ruck Snack, I struggled my whole life with pulverized snacks, endless crumbs, and other heartbreaking snack catastrophes. Now, I can stow my snacks with confidence and style!'
+    },
+    {
+      name : 'Mark Edwards',
+      rate : 2,
+      image : '/cust3.jpeg',
+      comment : 'I love how versatile this bag is. It can hold anything ranging from cookies that come in trays to cookies that come in tins.'
+    },
+ 
+
+]
+  
+  export const customerPageReview = [
+    {
+      name : 'Lawrence Kusi',
       rate : 5,
+      image : '/cust2.jpg',
+      comment: 'Initially I thought thier products may not be of higher quality untill I made my first purchase. thank you very much lakyShop, you guys deserve 5 stars '
+    },
+    {
+      name : 'Hector Gibbons',
+      rate : 3.4,
       image : '/cust1.jpg',
       comment : 'Before getting the Ruck Snack, I struggled my whole life with pulverized snacks, endless crumbs, and other heartbreaking snack catastrophes. Now, I can stow my snacks with confidence and style!'
     },
