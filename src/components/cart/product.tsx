@@ -5,7 +5,7 @@ import {products}  from "@/data/mock"
 import Link from 'next/link'
 import Image from 'next/image'
 import { Suspense } from 'react';
-import { CartProductSkeleton } from '../skeleton';
+// import { CartProductSkeleton } from '@app/components/skeleton';
 import NumberInput from './numberInput';
 import { assistant } from '../font'
 
@@ -15,11 +15,11 @@ const CartProduct = () => {
   const [inputValue, setInputValue] = useState(1)
 
   return (
-    <Suspense  fallback={<CartProductSkeleton />}>
+    <Suspense  fallback={<></>}>
       <div className={`${assistant.className} mt-8 `}>
         <div className="flow-root">
           <ul role="list" className="-my-6 divide-y divide-gray-200">
-            {products.slice(2,6).map((product) => (
+            {products.slice(2,4).map((product) => (
               <li key={product.id} className="flex py-6">
                 
                 <div className=" h-24 w-24 flex-shrink-0 flex content-center justify-center overflow-hidden rounded-md border border-gray-200">
