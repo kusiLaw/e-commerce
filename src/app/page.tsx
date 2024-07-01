@@ -24,7 +24,8 @@ export default async function Home() {
 
   return (
     <>
-      <Nav/>
+      <Nav />
+
       <div className="mt-[4.45rem] w-full ">
         <main className="relative w-full px-2 md:px-3  ">
 
@@ -34,13 +35,12 @@ export default async function Home() {
                       <p className="font-bold te text-[2rem] md:text-[2.5rem]">Hurry Up!</p>
                       <p className="font-bold text-[1.8rem] md:text-[2.5rem] text-black/80">Deal of the Day!</p>
                       <p className="mt-3 text-wite">Buy This T-shirt At 20% Discount, Use Code Off20</p>
-                      <button
-                        type="submit"
+                      <Link href={'/products/?cat=women'}
                         className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-[#0172a5]/70 font-semibold mt-6  px-4 py-3  font- leading-6 text-lg capitalize
                         text-white shadow-sm  hover:bg-[#0172a5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
                         Shop Now
                         <IoIosArrowForward/>
-                      </button>
+                      </Link>
                 </div>
             </div>
           </section>
@@ -54,25 +54,25 @@ export default async function Home() {
               {[ {
                       image: "women_collection",
                       text: "women",
-                      link: "#",
+                      link: "/products/?cat=women",
                       img_height: 100 ,
                       img_width :140
                     },{
                       image: "kids6",
                       text: "kids",
-                      link: "#",
+                      link: "/products/?cat=kids",
                       img_height: 900 ,
                       img_width :900
                     },{
                       image: "mens_collection",
                       text: "mens",
-                      link: "#",
+                      link: "/products/?cat=men",
                       img_height: 200 ,
                       img_width :200
                     },{
                       image: "alien2",
                       text: "electronics",
-                      link: "#",
+                      link: "/products/?cat=electronics",
                       img_height: 200 ,
                       img_width :400
                     }
@@ -95,13 +95,13 @@ export default async function Home() {
                                 <p className="font-bold te text-[1.8rem] md:text-[2.1rem] lg:text-[2.5rem] text-inherit mt-4">Feel different ?</p>
                                 <p className="font-bold text-[1.2rem] md:text-[2rem] lg:text-[2.3rem] text-black/80 mt-2">Original Men's Collections!</p>
                                 <p className="mt-3 text-wite text-inherit ">Be on top of your dress and make others feel your presence</p>
-                                <button
+                                <Link href={'/products/?cat=men'}
                                   type="submit"
                                   className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-[#05876b]/70 font-semibold mt-8  px-4 py-3  font- leading-6 text-lg capitalize
                                   text-white shadow-sm  hover:bg-[#05876b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
                                   Shop Now
                                   <IoIosArrowForward/>
-                               </button>
+                               </Link>
                     </div>
                </div>
             </div>
@@ -177,7 +177,8 @@ export default async function Home() {
              </div>
           </section>
         </main>
-      </div>
+        </div>
+        {/* </Suspense> */}
       <Footer/>
     </>
   );
