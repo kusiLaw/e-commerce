@@ -1,23 +1,22 @@
 'use client'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import Image from 'next/image'
 import Star from '../stars_rating/star'
-// import {  } from 'react'
 import TextCollapse from '@/components/collapsible_dev/collapsible_dev'
-// import { Assistant } from 'next/font/google'
 import { assistant } from '../font'
-import { RadioGroup } from '@headlessui/react'
 import { LiaRulerHorizontalSolid } from "react-icons/lia";
 import ProductColor from './color'
+import Submit from '../form/submit'
+import { addToCart } from '@/lib/utils'
+import { ProductDetail } from '@/type/types'
+import Skeleton from '../skeleton'
 
 
-const images = ['/img/hp_envy_1.jpg','/img/hp_envy_2.jpg','/img/hp_envy_3.jpg','/img/hp_envy_4.jpg']
+const ProductDetails = ({ product }: { product: ProductDetail }) => {
+  const [image, setImage] = useState(product.product_image[0].image)
 
-const ProductDetails = () => {
-  const [image, setImage] = useState(images[0])
-
-  const [selectedSize, setSelectedSize] = useState('')
+  const [selectedSize, setSelectedSize] = useState(product.size[0]?.size || '')
 
 
 
@@ -42,16 +41,18 @@ const ProductDetails = () => {
    
         <div className='w-full  md:w-[55%]'>
            <div className='w-full flex justify-center content-center'>
+             <Suspense fallback={<Skeleton customClassNames={'h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem]'} viewAs={'image'}/>}>
                 <div className='relative w-[15rem] h-[15rem]  sm:w-[20rem] sm:h-[20rem] md:w-[25rem] md:h-[25rem]
                 lg:w-[30rem] lg:h-[30rem] self-center'>
-                    <Image src={image} key={''} alt={'3'} fill objectFit='contain'/> 
+              <Image src={image} key={''} alt={'3'} fill objectFit='contain'/> 
                 </div>
+              </Suspense>
             </div>
 
             <div className='flex justify-center p-1 w-full gap-2 '>
-                {images.map((img, ind ) => (
+                {product.product_image.map((img, ind ) => (
                 <div key={ind} className='relative flex gap-3 w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] '>
-                    <Image src={img} key={ind + img} alt={img} fill  onClick={()=>setImage(img)}/>
+                    <Image src={img.image} key={ind} alt={product.name} fill  onClick={()=>setImage(img.image)} priority/>
                 </div>
                 ) )
                 }
@@ -59,25 +60,26 @@ const ProductDetails = () => {
        
         </div>
 
-        <form className='w-full md:w-[45%] p-2  '>
-            <div className='w-full font text-lg md:text-2xl '>
-                <h2 className='flex justify-between font-semibold'><span >Hp Enny</span> <span>${390}</span></h2>
+        <form className='w-full mt-4 px-2 sm:px-4 md:mt-0 md:px-0 md:w-[45%] p-2  ' action={addToCart}>
+           <div className='w-full font text-lg md:text-2xl '>
+                <input name='productId' className='hidden' value={1}/>
+          <h2 className='flex justify-between font-semibold'><span >{ product.name}</span> <span>${product.price}</span></h2>
             </div>
-            <div className='flex gap-4 w-full content-base items-end font-semibold '>
+            <div className='flex gap-4 w-full content-base items-end font-semibold mt-1'>
                 <Star rate={4} numberOfStars={5} disableColor={false}/> 
                 <Link href={'#'} className='text-gray-400 '> 1 review</Link>
             </div>
 
             <div className='flex flex-col  gap-6 mt-6'> 
                 <div className=''>
-                   <h3 className="font-medium text-gray-900 mb-1">Color</h3>
-                   <div >
-                       <ProductColor />
+                   <h3 className="font-medium text-gray-900 mb-3 ">Color</h3>
+                   <div className='pl-1' >
+                       <ProductColor color={product.color}/>
                     </div>
                     
                 </div>
                 <div className=''>
-                    <div className='flex justify-between mb-1'>
+                    <div className='flex justify-between mb-3'>
                       <h3 className="font-medium text-gray-900 ">
                         Sizes
                         
@@ -89,13 +91,13 @@ const ProductDetails = () => {
                     </div>
                     <ul className="w-full flex gap-3 flex-wrap flex-shrink">
                     { 
-                      ['12 "', '14 "', '15"', '16"' ].map((size) => (
-                        <li key={size}>
-                          <input type="radio" id={size} name={size} value={size} className="hidden peer" required checked={selectedSize === size}
+                      product.size.map((size) => (
+                        <li key={size.size}>
+                          <input type="radio" id={size.size} name='productSize' value={size.size} className="hidden peer" required checked={selectedSize === size.size}
                           onChange={(e)=> handleChange(e, setSelectedSize)} />
-                          <label htmlFor={size} className={classNames(`inline-flex items-center justify-between w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
-                            peer-checked:border-blue-context peer-checked:text-blue-context hover:text-gray-600 hover:bg-gray-100
-                            `)}>    <p className="w-full text-lg font-semibold">{size}</p>
+                          <label htmlFor={size.size} className={classNames(`inline-flex items-center justify-between w-full p-2 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                            peer-checked:border-blue-context min-w-[4rem] peer-checked:text-blue-context hover:text-gray-600 hover:bg-gray-100
+                            `)}>    <p className="w-full text-lg text-center font-semibold capitalize">{`${size.size || ''} ${size.unit || ''}`}</p>
                           </label>
 
                        </li>
@@ -106,24 +108,17 @@ const ProductDetails = () => {
                 </div>
 
                 <div className='flex justify-between gap-4'>
-                        <button type="submit"  className="flex w-full justify-center rounded-md  border border-blue-context font-semibold px-2 py-2  font- leading-6 text-lg capitalize
-                                text-blue-context shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                        <button type="submit"  className="flex w-full justify-center rounded-md  border border-black font-semibold px-2 py-2  font- leading-6 text-lg capitalize
+                                text-black shadow-sm hover:bg-black  hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
                                 Buy Now
                         </button>
-                        <button
-                                type="submit"
-                                className={`${assistant.className} flex w-full justify-center rounded-md bg-blue-context font-semibold  px-2 py-2  font- leading-6 text-lg capitalize
-                                text-white shadow-sm  hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
-                                Add to cart
-                        </button>
-
+                        <Submit text='Add to cart' pending_text='adding to cart...'/>
                 </div>
                   
 
                 <div className='text-wrap '>
                     <h2 className='font-bold text-normal mb-2'>Discription</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. 
-                        Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel</p>
+                  <p>{ product.description}</p>
                 </div>
 
                 <div className='flex flex-col gap-6'>
@@ -131,7 +126,7 @@ const ProductDetails = () => {
 
 
 
-                    <TextCollapse title={''} open={false} size={''}  >
+                    <TextCollapse title={'Features'} open={false} size={''}  >
                         {['1tb drive', 'Antiglare Screen', '12" screen'].map((spec)=>(
                         <li key={spec}>{spec}</li>
                         ))} 

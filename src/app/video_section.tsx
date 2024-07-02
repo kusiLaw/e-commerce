@@ -11,7 +11,7 @@ import { assistant } from "@/components/font";
 const VideoSection = () => {
     const [play, setPlay] = useState(true)
     
-   const ref = useRef(null);
+   const ref = useRef<HTMLVideoElement | null | any>(null);
 
   useEffect(() => {
     if (play) {
@@ -19,7 +19,7 @@ const VideoSection = () => {
     } else {
       ref.current.pause();
     }
-  });
+  }, [play]);
 
 
 

@@ -25,13 +25,16 @@ export interface  ProductDetail {
   name: string;
   product_code: string | undefined | null
   quantity: number | string,
-    rate : number | string,
-    image : string,
-    tag: 'sales' | 'hot' | 'new'
-    id: string | number,
-    link: string,
-    color: string | Array<string>,
-    total_rate: string |  number
+  rate : number | string,
+  product_image : [ {image:string}],
+  tag: 'sales' | 'hot' | 'new'
+  id: string | number,
+  link: string,
+  color: string | Array<string>,
+  total_rate: string | number
+  price: number | string,
+  description: string
+  size: [{ size: string, unit: string }]
 
   }
 
