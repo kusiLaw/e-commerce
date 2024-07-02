@@ -1,8 +1,6 @@
-// 'use client'
-import React from 'react'
+import React, { Suspense } from 'react'
 import ProductCard from '@/components/product/product_card'
 import Link from 'next/link'
-import { products } from '@/data/mock'
 import Pagination from '@/components/pagination'
 import Filter from '@/components/filter'
 import { CiSearch } from "react-icons/ci";
@@ -12,6 +10,7 @@ import { Metadata } from 'next'
 import { getData } from '@/lib/backend/django/server_actions'
 import { Productlist } from '@/type/types'
 import SearchInput from '@/components/form/search'
+import ProductSection from './product_section'
 
 // import { useSearchParams } from 'next/navigation';
 
@@ -60,16 +59,11 @@ export default async function Products({
                   <FaList/>
                </div>
             </div>
-            
-            <div className="w-full m-auto grid xsm:grid-cols-2 gap-8 sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
-                {
-                    products && products.results.map((data: React.JSX.IntrinsicAttributes & Productlist) =>(
-                    <div key={data.id}>
-                        <ProductCard {...data} colorCode={ false} />
-                    </div>
-                    ))
-                }
-            </div>
+           <Suspense fallback={<>loading</>}>
+              <div className="w-full m-auto grid xsm:grid-cols-2 gap-8 sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
+                  <ProductSection products={products.results}/>
+              </div>
+            </Suspense>
           <div className='flex flex-col w-full  items-center my-16'>
             <Pagination totalItems = {products.count}/>
            <span className='text-gray-400 text-sm '>{products.results.lenght} / { products.count}</span>  

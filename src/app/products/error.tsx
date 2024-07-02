@@ -1,16 +1,21 @@
 'use client'
- 
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+
 export default function Error({
   error,
-  reset,
+  // reset,
 }: {
   error: Error & { digest?: string }
-  reset: () => void
-}) {
+  // reset: () => void
+  }) {
+  const handleReset = () => {
+    
+  }
+  const router = useRouter()
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
+    <div className="h-[80vh] w-full flex flex-col  justify-center gap-4 items-center">
+      <h2 className="text-lg">Oops, something went wrong !</h2>
+      <button onClick={() => router.refresh()} className="px-6 bg-blue-context text-white py-2 shadow-sm  ">Try again</button>
     </div>
   )
 }
