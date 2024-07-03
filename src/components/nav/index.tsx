@@ -66,7 +66,7 @@ const Nav = () => {
                     </div> */}
                  <div className={` relative text-lg  h-full  hover:border-b group hover:border-blue-context border-b 
                      transition-all duration-500 ${pathname === '/products' ? 'border-b-blue-context' : ' '}`}>
-                      <div className='hidden md:inline-flex h-full items-center justify-center '>
+                      <div className='hidden sm:inline-flex h-full items-center justify-center '>
                         <Link href={'/products'} className={`hover:text-blue-context border-r-2 pr-4 capitalize 
                          group-hover:text-blue-context link  ` }>products</Link>
                       </div>
