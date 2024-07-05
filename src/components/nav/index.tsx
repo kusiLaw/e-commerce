@@ -111,7 +111,7 @@ const Nav = () => {
           () => setIsOpen(false)
         }>
          <div className='fixed h-full w-[85%] border bg-white '>
-            joijpjpjpjpjpjpjpjopjpopoj
+            {/* joijpjpjpjpjpjpjpjopjpopoj */}
          </div>
         </div>}
         {pageCover && <div  className='fixed left-0  right-0 h-full  bg-gray-600/20  transition-opacity shadow-xl z-20'>

@@ -26,7 +26,7 @@ const ProfileDropDown = ({isLogin = false, eventfn, args=''} : {isLogin: boolean
                         onClick={()=> eventfn(args, false)}>
                             Sign In
                         </Link>
-                        <Link href={'#'} className='flex w-full mt-4 justify-center text-sm rounded-sm py-1 border border-black leading-6 capitalize shadow-sm text-black  hover:bg-gray-200'>
+                        <Link href={'/auth/register/'} className='flex w-full mt-4 justify-center text-sm rounded-sm py-1 border border-black leading-6 capitalize shadow-sm text-black  hover:bg-gray-200'>
                             Create Accounts
                         </Link>
                 </div>       
