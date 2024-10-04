@@ -16,11 +16,13 @@ import { BsCart2 } from "react-icons/bs";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { BiCart } from "react-icons/bi";
 import Link from "next/link";
+import ProductUi from "./productui";
+import { Suspense } from "react";
 
 
 export default async function Home() {
-  const products = await getData('?page=1&count=10')
-  console.log('backend n/', products)
+  // const products = await getData('?page=1&count=10')
+  // console.log('backend n/', products)
 
   return (
     <>
@@ -88,7 +90,7 @@ export default async function Home() {
  
           </section>
           
-       <section className={`relative    h-[calc(568px-5.5rem)] md:h-[)]  mt-10 `}>
+          <section className={`relative    h-[calc(568px-5.5rem)] md:h-[)]  mt-10 `}>
             <div className=" bg-[#05876b]/30 img_1 bg-bottom bg-contain   h-full w-full flex flex-col justify-center items-center  ">
                 <div className="my-[2rem] h-full  w-full m-auto    lg:bg-transparent" >
                     <div className="w-[90%] h-[95%] m-auto bg-[#eee]/80 p-4 lg:py-10 lg:px-12 lg:bg-transparent ">
@@ -113,17 +115,11 @@ export default async function Home() {
               <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center  after:bg-red-600`}>
                 featured products
               </h2>
-              
-              <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3 gap-4 md:gap-6 md:grid-cols-4   xl:grid-cols-5 ">
-                { 
-                    products && products.results.map((data:any) =>(
-                    <div key={data.id}>
-                        <ProductCard {...data } colorCode = {false}/>
-                    </div>
-                    ))
-                }
-              </div>
-
+              <Suspense fallback={<p>Loading</p>}>
+                <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3 gap-4 md:gap-6 md:grid-cols-4   xl:grid-cols-5 ">
+                  <ProductUi url={ 'v1/products/?page=1&count=10'} />
+                </div>
+               </Suspense>
               <div className="w-full flex justify-center md:justify-end mt-10 md:pr-4 lg:pr-10">
                     <Link href={'/products'} className="capitalize py-2 px-4 border bg-gray-50 md:border-none text-sm  cursor-pointer">view More</Link>
               </div>

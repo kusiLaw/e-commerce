@@ -11,6 +11,7 @@ import { getData } from '@/lib/backend/django/server_actions'
 import { Productlist } from '@/type/types'
 import SearchInput from '@/components/form/search'
 import ProductSection from './product_section'
+import ProductUi from '../productui'
 
 // import { useSearchParams } from 'next/navigation';
 
@@ -34,9 +35,9 @@ export default async function Products({
   const query = searchParams?.name || '';
   const currentPage = Number(searchParams?.page) || 1 ;
 
-  const products = await getData(`?page=${query}`)
+  // const products = await getData(`?page=${query}`)
 
-  console.log(products)
+  // console.log(products)
   return (
     <div className='w-full h-auto pt-4 icon_bg px-2 md:px-3'>
       <div className='text-xs text-gray-500 ml-[2%]'>
@@ -61,12 +62,14 @@ export default async function Products({
             </div>
            <Suspense fallback={<>loading</>}>
               <div className="w-full m-auto grid xsm:grid-cols-2 gap-8 sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
-                  <ProductSection products={products.results}/>
+                  {/* <ProductSection products={products.results}/>
+                   */}
+                  <ProductUi url={`v1/products/?page=${query}` } />
               </div>
             </Suspense>
           <div className='flex flex-col w-full  items-center my-16'>
-            <Pagination totalItems = {products.count}/>
-           <span className='text-gray-400 text-sm '>{products.results.lenght} / { products.count}</span>  
+            {/* <Pagination totalItems = {products.count}/> */}
+           {/* <span className='text-gray-400 text-sm '>{products?.results.lenght} / { products?.count}</span>   */}
                 
             </div>
          </div>
