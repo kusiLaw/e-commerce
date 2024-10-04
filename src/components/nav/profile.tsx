@@ -22,11 +22,11 @@ const ProfileDropDown = ({isLogin = false, eventfn, args=''} : {isLogin: boolean
                        
                       </div>
                       <div className='mt-4'>
-                        <Link href={'/login'} className='flex w-full justify-center text-sm rounded-sm py-1  bg-blue-context leading-6 capitalize text-white shadow-sm  hover:bg-blue-hover'
+                        <Link href={'/auth/login'} className='flex w-full justify-center text-sm rounded-sm py-1  bg-blue-context leading-6 capitalize text-white shadow-sm  hover:bg-blue-hover'
                         onClick={()=> eventfn(args, false)}>
                             Sign In
                         </Link>
-                        <Link href={'#'} className='flex w-full mt-4 justify-center text-sm rounded-sm py-1 border border-black leading-6 capitalize shadow-sm text-black  hover:bg-gray-200'>
+                        <Link href={'/auth/register/'} className='flex w-full mt-4 justify-center text-sm rounded-sm py-1 border border-black leading-6 capitalize shadow-sm text-black  hover:bg-gray-200'>
                             Create Accounts
                         </Link>
                 </div>       

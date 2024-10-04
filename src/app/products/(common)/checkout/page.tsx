@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react'
 import OrderSummary from '@/components/orders/order_summary'
 import Image from 'next/image'
 import { products} from '@/data/mock'
@@ -8,57 +7,93 @@ import Input from '@/components/form/input'
 import { assistant } from '@/components/font'
 import CheckBox from '@/components/form/checkbox'
 import Link from 'next/link'
+import Submit from '../../../../components/form/submit'
 
 
-const Checkout = () => {
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('visa');
-  // const [cardNumber, setCardNumber] = useState('');
+const Checkout = (
+  {
+  searchParams,
+}: {
+  searchParams?: {
+    name?: string;
+    page?: string;
+  };
+  }
+) => {
 
-  const handleChange = (event:any, fn =(e:any)=>{''}) => {
-    event.stopPropagation()
-    console.log(event.target.value)
-    fn(event.target.value);
+  async function handleCheckout(formData,) {
+    let u =   setTimeout(() => 'hghgfhfg',40000)
+    console.log(formData.get('city'), 'hjhjhhjhjjhjhjhjjhj===', u)
+      
+    // check if the person is authentication
+    //if authenticated get data from server
+    //if not get data from local storage
+    // make transactions
   };
 
-  const handleCardNumber = (event:any, setFn:any) =>{
-      let card = event.target.value
-      card = card.replace(/\s+/g, '')
-      
-      // const str = 'yourverylongstring';
-      card = card.match(/.{1,4}/g) || [];
-      console.log(card.join(''))
-      setFn(card.join('  '))
-  }
+
+// async function addToCart(formData) {
+//     'use server'
+//     const productId = formData.get('productId')
+//     await updateCart(productId)
+//   }
 
 
-  let pro = products.slice(1,4)
+    //********* ENABLE THIS CODE IF YOU WANT HANDLE PAYMENT BY YOURSELF,  *******************/
+
+  // const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('visa');
+ 
+
+  // const handleChange = (event:any, fn =(e:any)=>{''}) => {
+  //   event.stopPropagation()
+  //   console.log(event.target.value)
+  //   fn(event.target.value);
+  // };
+
+  // const handleCardNumber = (event:any, setFn:any) =>{
+  //     let card = event.target.value
+  //     card = card.replace(/\s+/g, '')
+  //     card = card.match(/.{1,4}/g) || [];
+  //     console.log(card.join(''))
+  //     setFn(card.join('  '))
+  // }
+
+  //********* BRAINTREE DROPPING UI HERE, YOU MUST COMMENT THIS IF YOUR HANDLE PAYMENT BY YOURSELF ,  *******************
+
+
+
+  let pro = products.slice(1,4) // fetch cart data either from server or localstorage
 
   return (
     <div className={`${assistant.className} bg-white w-full  flex justify-center mt-28 mb-20 `}>
       <div className=' w-[90%] flex flex-col-reverse md:flex-row gap-4 justify-center border rounded-md shadow- border-t-4 border-t-blue-context'>
         <div className='w-full  md:w-[50%]   p-10 md:pr-12'>
-          <form>
+          <form action={handleCheckout}>
             <div>
-                  <p className='capitalize mb-4 font-medium'>shipping address</p>
-                  <div className='mb-4'>
-                      <Input label='email address' type='email' placeholder='Email Address'/>
-                  </div>
-                  <div className='mb-4'>
-                      <Input label='address' type='text' placeholder='Address'/>
-                  </div>
-                  <div className='mb-4'>
-                      <Input label='apartment / suit' type='email' placeholder='Email'/>
-                  </div>
-                  <div className='mb-4 flex justify-between '>
-                      <Input label='City' type='text' placeholder='City'/>
-                      <Input label='State / Province' type='text' placeholder='State Province'/>
+              <p className='capitalize mb-4 font-medium'>shipping address</p>
+              <div className='mb-4'>
+                <Input name='email' label='email address' type='email' placeholder='Email Address' required />
+              </div>
+                
+              <div className='mb-4'>
+                  <Input label='address' name='address' type='text' placeholder='Address' required/>
+              </div>
+              <div className='mb-4'>
+                  <Input label='apartment / suit' name='apartment' type='text' placeholder='Email' required/>
+              </div>
+              <div className='mb-4 flex justify-between '>
+                  <Input label='City' type='text'  name='city' placeholder='City'/>
+                  <Input label='State / Province' type='text' name='state' placeholder='State Province' required/>
 
-                      <Input label='postal code' type='text' placeholder='Post code'/>
-                  </div>
+                  <Input label='postal code' type='text' name='post-code' placeholder='Post code' required/>
+              </div>
+              <div className={'mt-10'}>
+                <Submit text='buy now' pending_text='making payment...'/>
+              </div>
             </div>
     
-
-           <div>
+           {/* ******** ENABLE THIS CODE IF YOU WANT HANDLE PAYMENT BY YOURSELF,  ****************** */}
+           {/* <div>
               <div>
                 <div className='flex justify-between  mb-3 mt-6 '>
                   <p className='capitalize font-medium'>payment details</p>
@@ -128,18 +163,14 @@ const Checkout = () => {
                     </div>
                     
                   </div>
-               
-                  <div className={'mt-10'}>
-                    <Link href={'/checkout'}
-                      type="submit"
-                      className={` flex w-full justify-center rounded-md bg-blue-context font-semibold  px-2 py-2  font- leading-6 text-lg capitalize
-                      text-white shadow-sm  hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
-                      Pay Now
-                    </Link>
-                 </div>
+                   
               </div>
            </div>
-         
+          */}
+
+            
+            {/********* BRAINTREE DROPPING UI HERE, YOU MUST COMMENT THIS IF YOUR HANDLE PAYMENT BY YOURSELF ,  *******************/}
+            
 
           </form>
         </div>

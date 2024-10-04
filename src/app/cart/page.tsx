@@ -22,7 +22,7 @@ const ShoppingCart = () => {
       <div className='w-full md:w-[40%] px-2 md:px-4 mt-4'>
           <OrderSummary orders={products} tax={57} shipping={0}/>
           <div className={'mt-10'}>
-              <Link href={'/checkout'}
+              <Link href={'products/checkout'}
                 type="submit"
                 className={` flex w-full justify-center rounded-md bg-blue-context font-semibold  px-2 py-2  font- leading-6 text-lg capitalize
                 text-white shadow-sm  hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>

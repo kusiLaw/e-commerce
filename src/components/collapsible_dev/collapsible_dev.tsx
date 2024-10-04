@@ -20,7 +20,7 @@ const TextCollapse = ({ title= 'Features', children , open = false, size =''} : 
     <div className='text-default_blue border-t border-b  py-2'>
        <div className='flex flex-col gap-2'>
           <div className='flex flex-wr/a justify-between items-center  py-2'>
-           <h3 className='flex items-center'>
+           <h3 className='flex items-center font-bold text-base'>
             {title}
            </h3>
            <div className='flex justify-end text-end font-normal' onClick={()=>{setDisplay(!display)}}>

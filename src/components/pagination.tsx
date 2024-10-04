@@ -1,68 +1,71 @@
+'use client'
 import React from 'react'
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight} from "react-icons/md";
+import { Productlist } from '@/type/types'
+import Link from 'next/link';
+import { getData } from '@/lib/backend/django/server_actions';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+
+const Pagination = ({ totalItems = 0 }: string | number | any) => {
+  
+  //api return max of 20 item per page,
+  // total pagination per total number
+  
+
+  let remainder  = parseInt(totalItems) % 20  
+  let int = parseInt(totalItems) - remainder
+  let divMod = int / 20 + 1
+  console.log(divMod)
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const { replace } = useRouter();
+    
+
+   function handleSearch(term: string) {
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set('page', term);
+    } else {
+      params.delete('page');
+    }
+    replace(`${pathname}?${params.toString()}`);
+
+    // console.log(params)
+    }
 
 
-
-const Pagination = () => {
   return (
     <div className="flex items-center justify-between border-gray-200 bg-white px-4 py-3 sm:px-6">
      
-          <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-            <a
-              href="#"
+      <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+ 
+            <button
               className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Previous</span>
               <MdOutlineKeyboardArrowLeft/>
-            </a>
-            {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
-            <a
-              href="#"
+            </button>
+        
+             {[...Array(divMod)].map((e, i) => {
+             return    <button key={i}
+              // href={`/products/?page=${i + 1}`}
               aria-current="page"
-              className="relative z-10 inline-flex items-center bg-blue-context px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              1
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              2
-            </a>
-            <a
-              href="#"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              3
-            </a>
-            <span className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">
-              ...
-            </span>
-            <a
-              href="#"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              8
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              9
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold  ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              10
-            </a>
-            <a
-              href="#"
+              className={`relative z-10 inline-flex items-center ${ i === divMod ? 'bg-blue-context text-white' : 'text-inherit'} px-4 py-2 text-sm font-semibold  focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+            onClick={(e) => {
+          handleSearch((i + 1).toString());
+        }}
+             >
+              {e}
+            </button>;
+            })}
+
+            <button
               className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Next</span>
               <MdOutlineKeyboardArrowRight/>
-            </a>
+            </button>
           </nav>
     </div>
   )

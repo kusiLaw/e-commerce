@@ -13,10 +13,10 @@ export interface Productlist {
   name: string,
   product_image : string | Array<string>,
   tag: 'sales' | 'hot' | 'new' | 'default',
-  saling_price: number,
+  price: number,
   color: any | {
-    text: string
-    code: string
+    color: string
+    color_code: string
  },
  colorCode : boolean | null | undefined
 }
@@ -25,13 +25,16 @@ export interface  ProductDetail {
   name: string;
   product_code: string | undefined | null
   quantity: number | string,
-    rate : number | string,
-    image : string,
-    tag: 'sales' | 'hot' | 'new'
-    id: string | number,
-    link: string,
-    color: string | Array<string>,
-    total_rate: string |  number
+  rate : number | string,
+  product_image : [ {image:string}],
+  tag: 'sales' | 'hot' | 'new'
+  id: string | number,
+  link: string,
+  color: string | Array<string>,
+  total_rate: string | number
+  price: number | string,
+  description: string
+  size: [{ size: string, unit: string }]
 
   }
 

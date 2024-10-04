@@ -2,11 +2,13 @@ import Link from 'next/link'
 import React from 'react'
 import { ImFacebook } from "react-icons/im";
 import { ImGooglePlus } from "react-icons/im";
-import Image
- from 'next/image';
-const Login = () => {
-  return (
-    <div className="flex min-h-fit flex-1 flex-col p-6  border-red-500 w-full min-w-[224px] md:max-w-fit  bordr ">
+import Image from 'next/image';
+
+
+export default function SingIn() {
+    return (
+        <div className="flex justify-center items-center">
+ <div className="flex min-h-fit flex-1 flex-col p-6  border-red-500 w-full min-w-[224px] md:max-w-fit  bordr ">
     <div className="sm:mx-auto  min-w-full ">
 
       <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 capitalize">
@@ -77,29 +79,28 @@ const Login = () => {
              border-gray-300 text-sm'>or</p>
       </div>
       <div className=' flex flex-col sm:flex-row  justify-between gap-6 w-full mt-10' >
-        <Link href={'#'} className='flex content-center bordr  max-h-fit min-w-fit  shadow-md rounded-md bg-[#4267B2]  text-white hover:bg-[#5376bb] '>
-          <span className='text-2xl font-extrabold  p-2 mr-2 bg-white text-[#2b53a3] shadow-md rounded-md'> <ImFacebook/> </span>
-          <span className='pr-2 self-center text-sm'> Login with Facebook  </span>
-        </Link>
-        {/* rounded-tr-md rounded-tl-lg rounded-bl-lg rounded-br-md */}
+    
         <Link href={'#'} className='flex content-center bordr max-h-fit min-w-fit   
-        shadow-md  rounded-md border-gray-300 bg-[#DB4437] text-white hover:bg-[#e65f53]'><span></span>
-          <span className='text-2xl font-extrabold p-2 mr-2 b-[#c51707] bg-white shadow-md rounded-md'> 
+        shadow-md  rounded-md border-gray-300  text-black border hover:shadow-lg'><span></span>
+          <span className='text-2xl font-extrabold p-2 mr-2 b-[#c51707] bg-white shadow-d rounded-m'> 
           <Image src={'/google.svg'} height='25' width='25' alt={'sd'}/>
-          {/* <ImGooglePlus/> */}
            </span>
           <span className=' pr-2 self-center text-sm'> Login with Google </span>      
         </Link>
-
-      </div>
+        <Link href={'#'} className='flex content-center bordr  max-h-fit min-w-fit  shadow-md rounded-md bg-[#0165E1]  text-white hover:bg-[#0866ff]/90  hover:shadow-lg'>
+          <span className='text-2xl font-extrabold  p-2 mr- text-white g-[#2b53a3] shadow-m rounded-d'> <ImFacebook/> </span>
+          <span className='pr-2 self-center text-sm'> Login with Facebook  </span>
+        </Link>
+       </div>
       
-    </div>
+      </div>
 
-    <div className='mt-10'>
-      <p>{"Don't have a Shop account? "}<Link  href={''} className='text-blue-context text-sm'>Create an account</Link></p>
+        <div className='mt-10'>
+        <p>{"Don't have a Shop account? "}<Link  href={'/auth/register/'} className='text-blue-context text-sm'>Create an account</Link></p>
+        </div>
+      </div>
     </div>
-  </div>
-  )
-}
-
-export default Login
+       
+    );
+  }
+  
