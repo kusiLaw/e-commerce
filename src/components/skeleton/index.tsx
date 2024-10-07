@@ -1,22 +1,12 @@
-'use client'
+import { ProductSkeleton } from "./products";
+import { ProductUiSkeleton } from "./productui";
+import { LineSkeleton } from "./line";
+import Skeleton from "./skeleton";
+import { ImageSkeleton } from "./image";
 
-import React from 'react'
-import { FaRegImage } from "react-icons/fa6";
-import { MdVideoLibrary } from "react-icons/md";
 
 
-const Skeleton = ({ customClassNames= '', viewAs= null}: {
-    customClassNames: string, viewAs: null | 'image' | 'video'
-}) => {
-  return (
-      <div className={`h-1 border-blue-300 bg-slate-200 animate-pulse flex text-gray-400 text-[3rem] justify-center items-center  ${customClassNames}`}>
-          {viewAs === 'image' && <FaRegImage />}
-          {viewAs === 'video' && <MdVideoLibrary/>}
-       </div>
-  )
-}
-
-export default Skeleton
+export { ProductSkeleton, ProductUiSkeleton, ImageSkeleton,Skeleton, LineSkeleton};
 
 
 
@@ -25,21 +15,6 @@ export default Skeleton
 
 
 
-
-
-
-
-// export const  ImageSkeleton = ({
-//   rounded = 'rounded-full',
-//   width = 'w-10',
-//   height = 'h-10'
-// }) => {
-//   return (
-//     <div className="animate-pulse flex space-x-4">
-//       <div className={`${rounded} ${height}  bg-slate-200 ${width}`}></div>
-//     </div>
-//   )
-// }
 
 // export const CartProductSkeleton = () => {
 //   return (
