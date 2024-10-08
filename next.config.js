@@ -6,10 +6,10 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: '127.0.0.1',
+        hostname: process.env['IP_ADDRESS'],
         port: '8000',
         pathname: '/media/**',
       },
     ],
   },
-  }
+}

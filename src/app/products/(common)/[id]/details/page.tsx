@@ -4,16 +4,16 @@ import ProductReview from '@/components/product_reviews'
 import { products } from '@/data/mock'
 import Carousel from '@/components/carousel'
 import { usePathname } from 'next/navigation'
-import { getData } from '@/lib/backend/django/server_actions'
+import { getData } from '@/lib/backend/server_actions'
 import { ProductDetail } from '@/type/types'
 import { cookies } from 'next/headers'
-import Skeleton from '@/components/skeleton'
+// import Skeleton from '@/components/skeleton'
 export default async function Details({
   params: { id },
 }: {
   params: { id: string }
   }) {
-    const product = await getData(`${id}/`)
+    const product = await getData(`v1/products/${id}/`)
 
   // const pathname = usePathname()
   // const cookieStore = cookies()

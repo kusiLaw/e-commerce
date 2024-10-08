@@ -12,7 +12,7 @@ import { Productlist } from '@/type/types'
 import SearchInput from '@/components/form/search'
 import ProductSection from './product_section'
 import ProductUi from '../productui'
-
+import { ProductUiSkeleton } from '@/components/skeleton'
 // import { useSearchParams } from 'next/navigation';
 
 
@@ -35,9 +35,6 @@ export default async function Products({
   const query = searchParams?.name || '';
   const currentPage = Number(searchParams?.page) || 1 ;
 
-  // const products = await getData(`?page=${query}`)
-
-  // console.log(products)
   return (
     <div className='w-full h-auto pt-4 icon_bg px-2 md:px-3'>
       <div className='text-xs text-gray-500 ml-[2%]'>
@@ -50,22 +47,20 @@ export default async function Products({
           <Filter />
         </div>
          <div className='w-full '>
-            <div className="flex  w-full justify-end items-center mt-2 mb-6 pr-10">
+            <div className="flex  w-full justify-end items-center mt-2  h-[2.3rem]  mb-6 pr-10">
                
-                <SearchInput  placeholder={"Search..."}/>
-               <div className='text-[1.5rem] ml-5 text-gray-500 hover:text-gray-700'>
+               <SearchInput  placeholder={"Search..."}/>
+               <div className='text-[1.2rem] ml-5 text-gray-500 hover:text-gray-700'>
                  <BiGridAlt/>
                </div>
-               <div  className='text-[1.5rem] ml-2 text-gray-500 hover:text-gray-700'>
+               <div  className='text-[1.2rem] ml-2 text-gray-500 hover:text-gray-700'>
                   <FaList/>
                </div>
             </div>
-           <Suspense fallback={<>loading</>}>
-              <div className="w-full m-auto grid xsm:grid-cols-2 gap-8 sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro">
-                  {/* <ProductSection products={products.results}/>
-                   */}
+            <Suspense fallback={<ProductUiSkeleton number={10}/>}>
+              {/* <div className="w-full m-auto grid xsm:grid-cols-2 gap- sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro"> */}
                   <ProductUi url={`v1/products/?page=${query}` } />
-              </div>
+              {/* </div> */}
             </Suspense>
           <div className='flex flex-col w-full  items-center my-16'>
             {/* <Pagination totalItems = {products.count}/> */}
