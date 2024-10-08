@@ -24,14 +24,14 @@ const SearchInput = ({ placeholder = '' }) => {
     
 
   return (
-       <div className="rounded-full border-0 py-1 pl-4 text-gray-900 shadow-sm ring-1 ring-inset
+       <div className="rounded-full border-none -py-2 pl-4 text-gray-900 shadow-sm ring-1 ring-inset
                     ring-gray-400 placeholder:text-gray-400 focus:ring-1 focus:ring-inset flex items-center
-                    hover:ring-blue-context/90 ">
+                    hover:ring-blue-context/90 text-sm hover:shadow-md h-full py-[0.15rem] ">
                   <input
                     name="email"
                     type='text'
                     placeholder={placeholder}
-                    className="w-full border-collapse focus:outline-0 focus:ring-0 active:border-collapse  "
+                    className="w-full border-none ring-0 focus:outline-0 h-full focus:ring-0 active:border-collapse  "
                    onChange={(e) => {
           handleSearch(e.target.value);
               }}

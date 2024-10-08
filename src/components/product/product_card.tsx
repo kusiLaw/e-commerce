@@ -4,7 +4,7 @@ import Link from 'next/link'
 import WishListButton from './wishlist_button'
 import { Productlist } from '@/type/types'
 import ProductColor from './color'
-import Skeleton from '../skeleton'
+import {Skeleton, ImageSkeleton} from '../skeleton'
 
 
 const ProductCard = ({ id, name, product_image = [{ image: '/blur.jpg' }], tag, color, price, colorCode = false }: Productlist ) => {
@@ -17,15 +17,16 @@ const ProductCard = ({ id, name, product_image = [{ image: '/blur.jpg' }], tag, 
            <div className=' flex relative justify-center content-center
            h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem] 
            shadow-xs bg-gray-50 rounded-md mb- overflow-hidden shrink grow'>
-          <Suspense fallback={<Skeleton customClassNames='h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem]' viewAs={'image'}/>}>
+          <Suspense fallback={
+            <Skeleton customClassNames='h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem]' viewAs={'image'} />
+            // <ImageSkeleton/>
+          }>
             <Link href={'/products/' + id + '/details'} >
                     <Image src={product_image[0] && product_image[0]['image']} alt={''}
             // fill
               width={180}
               height={180}
                     objectFit='cover'
-                    // priority
-                    // sizes="170px, 170px, (max-width: 768px) 180px, 180px"
                     />
                     {tag === 'sales' && <div className='absolute bg-blue-contrast1 text-white uppercase left-0 top-3 drop-shadow-md
                     px-3 font-thin text-xs '>sales</div>}
@@ -51,7 +52,6 @@ const ProductCard = ({ id, name, product_image = [{ image: '/blur.jpg' }], tag, 
                 </div>
                 <div className='flex justify- w-full mb-2 mt-2'>
                     <p className='text-ellipsis text-nowrap overflow-hidden w-full  font-bold '>{price && price.toString()}</p>
-                    {/* <div><p className='line-through font-extralight text-[8px]'>{2344}</p></div> */}
                 </div>
             </div>
       </div>

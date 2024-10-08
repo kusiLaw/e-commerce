@@ -72,7 +72,7 @@ const Filter = () => {
                        <label htmlFor={list} className='ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'>
                         <Star rate={parseInt(list)} numberOfStars={5} disableColor={true}/>
                       </label>
-                        <input type="checkbox" id="scales" name={list}className='w-6 h-[16px] text-blue-context bg-black border-gray-300 rounded focus:ring-blue-500 ' />
+                        <input type="checkbox" id="scales" name={list}className='w-6 h-[16px] text-blue-context  border-gray-300 rounded focus:ring-blue-500 ' />
                   </div>
                 </div>
             ))}
