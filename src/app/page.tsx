@@ -91,7 +91,7 @@ export default async function Home() {
                 <div className="my-[2rem] h-full  w-full m-auto    lg:bg-transparent" >
                     <div className="w-[90%] h-[95%] m-auto bg-[#eee]/80 p-4 lg:py-10 lg:px-12 lg:bg-transparent ">
                       <p className="font-bold te text-[1.8rem] md:text-[2.1rem] lg:text-[2.5rem] text-inherit mt-4">Feel different ?</p>
-                      <p className="font-bold text-[1.2rem] md:text-[2rem] lg:text-[2.3rem] text-black/80 mt-2">Original Men's Collections!</p>
+                      <p className="font-bold text-[1.2rem] md:text-[2rem] lg:text-[2.3rem] text-black/80 mt-2">Original Men{"'"}s Collections!</p>
                       <p className="mt-3 text-wite text-inherit ">Be on top of your dress and make others feel your presence</p>
                       <Link href={'/products/?cat=men'}
                         type="submit"
