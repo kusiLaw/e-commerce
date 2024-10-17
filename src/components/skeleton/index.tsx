@@ -3,10 +3,10 @@ import { ProductUiSkeleton } from "./productui";
 import { LineSkeleton } from "./line";
 import Skeleton from "./skeleton";
 import { ImageSkeleton } from "./image";
+import ProductDetailSkeleton from './productdetails'
 
 
-
-export { ProductSkeleton, ProductUiSkeleton, ImageSkeleton,Skeleton, LineSkeleton};
+export { ProductSkeleton, ProductUiSkeleton, ImageSkeleton,Skeleton, LineSkeleton, ProductDetailSkeleton};
 
 
 

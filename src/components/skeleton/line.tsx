@@ -1,7 +1,7 @@
 import Skeleton from "./skeleton"
 
-export const LineSkeleton = () => {
+export const LineSkeleton = ({classname = ''}) => {
   return (
-   <Skeleton customClassNames="w-full h-[0.7rem] round-sm " viewAs={null}/>
+    <Skeleton customClassNames={`w-full h-[0.7rem] round-sm ${classname}`} viewAs={null}/>
   )
 }
