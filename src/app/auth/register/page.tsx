@@ -5,48 +5,48 @@ import { useRegisterMutation } from '@/lib/redux/authApiSlice'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
 
-const Page = () => {
-  const router = useRouter()
-  const[register,{isLoading}] = useRegisterMutation()
-  const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    re_password: ''
-  })
+const Register = () => {
+  // const router = useRouter()
+  // const[register,{isLoading}] = useRegisterMutation()
+  // const [formData, setFormData] = useState({
+  //   first_name: '',
+  //   last_name: '',
+  //   email: '',
+  //   password: '',
+  //   re_password: ''
+  // })
 
-  const {
-    first_name,
-    last_name,
-    email,
-    password,
-    re_password,
-  } = formData;
+  // const {
+  //   first_name,
+  //   last_name,
+  //   email,
+  //   password,
+  //   re_password,
+  // } = formData;
 
-  const handleSubmit = (event:FormEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    register({first_name,
-    last_name,
-    email,
-    password,
-      re_password,
-    })
-    .unwrap()
-      .then(() => {
-        toast.success('Please check your email to activate your account')
-        router.push('/auth/login')
-      })
-      .catch((error) => {
-        console.log(error)
-        toast.error('Failed to create account ', error)
-      })
+  // const handleSubmit = (event:FormEvent<HTMLInputElement>) => {
+  //   event.preventDefault();
+  //   register({first_name,
+  //   last_name,
+  //   email,
+  //   password,
+  //     re_password,
+  //   })
+  //   .unwrap()
+  //     .then(() => {
+  //       toast.success('Please check your email to activate your account')
+  //       router.push('/auth/login')
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //       toast.error('Failed to create account ', error)
+  //     })
     
-  }
+  // }
 
-  const handleOnChange = (event:ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value})
-  }
+  // const handleOnChange = (event:ChangeEvent<HTMLInputElement>) => {
+  //   setFormData({ ...formData, [event.target.name]: event.target.value})
+  // }
 
   return (
     <div>
@@ -58,7 +58,7 @@ const Page = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form  onSubmit={handleSubmit} method="POST" className="space-y-3">
+          <form   method="POST" className="space-y-3">
             <div className='flex justify-between '>
               <div>
                   <label htmlFor="first_name" className="block text-sm font-medium leading-6 text-gray-900">
@@ -69,9 +69,9 @@ const Page = () => {
                     id="first_name"
                     name="first_name"
                     type="text"
-                    value={first_name}
+                    // value={first_name}
                     maxLength={45}
-                    onChange={handleOnChange}
+                    // onChange={handleOnChange}
                     required
                     className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset
                     ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-blue-hover
@@ -87,8 +87,8 @@ const Page = () => {
                   <input
                     id="last_name"
                     name="last_name"
-                    value={last_name}
-                    onChange={handleOnChange}
+                    // value={last_name}
+                    // onChange={handleOnChange}
                     required
                      maxLength={45}
 
@@ -110,8 +110,8 @@ const Page = () => {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  value={email}
-                  onChange={handleOnChange}
+                  // value={email}
+                  // onChange={handleOnChange}
                   required
                     maxLength={80}
                   className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset
@@ -137,8 +137,8 @@ const Page = () => {
                     name="password"
                     type="password"
                   placeholder='password'
-                  value={password}
-                  onChange={handleOnChange}
+                  // value={password}
+                  // onChange={handleOnChange}
                   required
                     maxLength={45}
                     className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm 
@@ -161,8 +161,8 @@ const Page = () => {
                     name="re_password"
                     type="password"
                   placeholder='re_password'
-                  value={re_password}
-                  onChange={handleOnChange}
+                  // value={re_password}
+                  // onChange={handleOnChange}
                   required
                   maxLength={45}
                     className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm 
@@ -195,4 +195,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Register

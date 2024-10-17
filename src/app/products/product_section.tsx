@@ -2,7 +2,13 @@ import React from 'react'
 import ProductCard from '@/components/product/product_card'
 import { Productlist } from '@/type/types'
 
-const ProductSection = ({products}:{products:Productlist}) => {
+const ProductSection = ({ products = undefined}: { products: Productlist | undefined | any}) => {
+  
+  if (!products) {
+    return (
+      <></>
+    )
+  }
   return (
       <>
           {

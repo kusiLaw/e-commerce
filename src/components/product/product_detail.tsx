@@ -10,7 +10,7 @@ import ProductColor from './color'
 import Submit from '../form/submit'
 import { addToCart } from '@/lib/utils'
 import { ProductDetail } from '@/type/types'
-import Skeleton from '../skeleton'
+import {Skeleton} from '../skeleton'
 
 
 const ProductDetails = ({ product }: { product: ProductDetail }) => {
@@ -41,7 +41,9 @@ const ProductDetails = ({ product }: { product: ProductDetail }) => {
    
         <div className='w-full  md:w-[55%]'>
            <div className='w-full flex justify-center content-center'>
-             <Suspense fallback={<Skeleton customClassNames={'h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem]'} viewAs={'image'}/>}>
+          <Suspense fallback={
+            <Skeleton customClassNames={'h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem]'} viewAs={'image'} />
+          }>
                 <div className='relative w-[15rem] h-[15rem]  sm:w-[20rem] sm:h-[20rem] md:w-[25rem] md:h-[25rem]
                 lg:w-[30rem] lg:h-[30rem] self-center'>
               <Image src={image} key={''} alt={'3'} fill objectFit='contain'/> 
@@ -73,7 +75,8 @@ const ProductDetails = ({ product }: { product: ProductDetail }) => {
             <div className='flex flex-col  gap-6 mt-6'> 
                 <div className=''>
                    <h3 className="font-medium text-gray-900 mb-3 ">Color</h3>
-                   <div className='pl-1' >
+            <div className='pl-1' >
+              {/* @ts-ignore */}
                        <ProductColor color={product.color}/>
                     </div>
                     

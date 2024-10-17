@@ -21,9 +21,9 @@ const Checkout = (
   }
 ) => {
 
-  async function handleCheckout(formData,) {
-    let u =   setTimeout(() => 'hghgfhfg',40000)
-    console.log(formData.get('city'), 'hjhjhhjhjjhjhjhjjhj===', u)
+  async function handleCheckout() {
+    // let u =   setTimeout(() => 'hghgfhfg',40000)
+    // console.log(formData.get('city'), 'hjhjhhjhjjhjhjhjjhj===', u)
       
     // check if the person is authentication
     //if authenticated get data from server

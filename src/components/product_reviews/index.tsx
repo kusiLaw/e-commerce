@@ -34,6 +34,7 @@ const ProductReview = () => {
             {
             customerReview.map(el => (
               <li key={el.name + el.rate}>
+                {/* @ts-ignore */}
                 <CustomerReview  {...el}/>
               </li>
               

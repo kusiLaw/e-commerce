@@ -5,7 +5,7 @@ import { baseUrl } from "./baseurls"
 // import { notFound } from 'next/navigation'
 
 
-const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
+// const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 
 

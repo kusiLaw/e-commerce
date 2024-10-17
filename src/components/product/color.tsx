@@ -4,8 +4,8 @@ import React, {useState} from 'react'
 
 
 
-const ProductColor = ({ color = [{ 'color': '', 'color_code':''}], size = 1.8, allow_selection = true }: {
-  color: [{color:string, color_code:string }] | [], size: number, allow_selection:boolean
+const ProductColor = ({ color = [{ 'color': '', 'color_code':''}]  , size = 1.8, allow_selection = true }: {
+  color: [{color:string, color_code:string }] | any, size: number, allow_selection:boolean
 }) => {
   const [selectedColor, setSelectedColor] = useState(color[0]?.color_code || color)
     

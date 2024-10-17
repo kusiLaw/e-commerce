@@ -7,7 +7,7 @@ import ProductColor from './color'
 import {Skeleton, ImageSkeleton} from '../skeleton'
 
 
-const ProductCard = ({ id, name, product_image = [{ image: '/blur.jpg' }], tag, color, price, colorCode = false }: Productlist ) => {
+const ProductCard = ({ id, name, product_image , tag, color, price, colorCode = false }: Productlist ) => {
  
   return (
     <div  className='relative  group  border-[1px] 
@@ -22,6 +22,7 @@ const ProductCard = ({ id, name, product_image = [{ image: '/blur.jpg' }], tag, 
             // <ImageSkeleton/>
           }>
             <Link href={'/products/' + id + '/details'} >
+              {/* @ts-ignore */}
                     <Image src={product_image[0] && product_image[0]['image']} alt={''}
             // fill
               width={180}
@@ -45,7 +46,7 @@ const ProductCard = ({ id, name, product_image = [{ image: '/blur.jpg' }], tag, 
                </Link>
           <div className='flex flex-wrap items-center overflow-hidden text-sm text-gray-500  '>
              {
-              colorCode ? <ProductColor colors={color} size={1.6} /> :
+              colorCode ? <ProductColor color={color} size={1.6} allow_selection /> :
                 <p className=' text-ellipsis text-nowrap overflow-hidden w-full min-h-4  '>{color[0]?.color || ''} </p>
                } 
                      
