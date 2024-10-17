@@ -5,10 +5,10 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: process.env['IP_ADDRESS'],
-        port: '8000',
-        pathname: '/media/**',
+        protocol: process.env['IMAGE_PROTOCOL'] || 'http',
+        hostname: process.env['IMAGE_HOST'] ||  '127.0.0.1',
+        port: process.env['IMAGE_PORT'] || '8000',
+        pathname: process.env['IMAGE_PATH'] || '/media/**',
       },
     ],
   },

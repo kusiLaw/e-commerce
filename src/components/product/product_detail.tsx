@@ -10,15 +10,13 @@ import ProductColor from './color'
 import Submit from '../form/submit'
 import { addToCart } from '@/lib/utils'
 import { ProductDetail } from '@/type/types'
-import {Skeleton} from '../skeleton'
+import {Skeleton, ImageSkeleton, LineSkeleton} from '../skeleton'
 
 
-const ProductDetails = ({ product }: { product: ProductDetail }) => {
+export default  function  ProductDetails ({ product }: { product: ProductDetail }){
   const [image, setImage] = useState(product.product_image[0].image)
 
   const [selectedSize, setSelectedSize] = useState(product.size[0]?.size || '')
-
-
 
   // const [selectedValue, setSelectedValue] = useState('');
 
@@ -41,20 +39,21 @@ const ProductDetails = ({ product }: { product: ProductDetail }) => {
    
         <div className='w-full  md:w-[55%]'>
            <div className='w-full flex justify-center content-center'>
-          <Suspense fallback={
-            <Skeleton customClassNames={'h-[11rem] w-[11rem] lg:h-[12rem] lg:w-[12rem] max-h-[15rem]   max-w-[16rem]'} viewAs={'image'} />
-          }>
                 <div className='relative w-[15rem] h-[15rem]  sm:w-[20rem] sm:h-[20rem] md:w-[25rem] md:h-[25rem]
                 lg:w-[30rem] lg:h-[30rem] self-center'>
-              <Image src={image} key={''} alt={'3'} fill objectFit='contain'/> 
+                    <Suspense fallback={<ImageSkeleton />}>
+                             <Image src={image} key={''} alt={'3'} fill objectFit='contain' /> 
+                  </Suspense>
+
                 </div>
-              </Suspense>
             </div>
 
             <div className='flex justify-center p-1 w-full gap-2 '>
                 {product.product_image.map((img, ind ) => (
-                <div key={ind} className='relative flex gap-3 w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] '>
-                    <Image src={img.image} key={ind} alt={product.name} fill  onClick={()=>setImage(img.image)} priority/>
+                  <div key={ind} className='relative flex gap-3 w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] '>
+                    <Suspense fallback={<ImageSkeleton />}>
+                      <Image src={img.image} key={ind} alt={product.name} fill onClick={() => setImage(img.image)} priority />
+                    </Suspense>
                 </div>
                 ) )
                 }
@@ -67,17 +66,22 @@ const ProductDetails = ({ product }: { product: ProductDetail }) => {
                 <input name='productId' className='hidden' value={1}/>
           <h2 className='flex justify-between font-semibold'><span >{ product.name}</span> <span>${product.price}</span></h2>
             </div>
-            <div className='flex gap-4 w-full content-base items-end font-semibold mt-1'>
+        <div className='flex gap-4 w-full content-base items-end font-semibold mt-1'>
+              <Suspense fallback={<LineSkeleton />}>
+
                 <Star rate={4} numberOfStars={5} disableColor={false}/> 
                 <Link href={'#'} className='text-gray-400 '> 1 review</Link>
+            </Suspense>
             </div>
 
             <div className='flex flex-col  gap-6 mt-6'> 
                 <div className=''>
                    <h3 className="font-medium text-gray-900 mb-3 ">Color</h3>
-            <div className='pl-1' >
-              {/* @ts-ignore */}
-                       <ProductColor color={product.color}/>
+                    <div className='pl-1' >
+                      <Suspense fallback={<LineSkeleton />}>
+                       {/* @ts-ignore */}
+                      <ProductColor color={product.color} />
+                    </Suspense>
                     </div>
                     
                 </div>
@@ -130,8 +134,11 @@ const ProductDetails = ({ product }: { product: ProductDetail }) => {
 
 
                     <TextCollapse title={'Features'} open={false} size={''}  >
-                        {['1tb drive', 'Antiglare Screen', '12" screen'].map((spec)=>(
+                  {['1tb drive', 'Antiglare Screen', '12" screen'].map((spec) => (
+                      <Suspense key={spec} fallback={<LineSkeleton />}>
+
                         <li key={spec}>{spec}</li>
+                      </Suspense>
                         ))} 
                     </TextCollapse>
                     
@@ -144,4 +151,3 @@ const ProductDetails = ({ product }: { product: ProductDetail }) => {
   )
 }
 
-export default ProductDetails
