@@ -13,3 +13,10 @@ module.exports = {
     ],
   },
 }
+
+console.log(
+  process.env['IMAGE_PROTOCOL'],
+  process.env['IMAGE_HOST'],
+  process.env['IMAGE_PORT'],
+  process.env['IMAGE_PATH']
+)
