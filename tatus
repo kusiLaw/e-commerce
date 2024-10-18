@@ -1,0 +1,196 @@
+[33mcommit 482a3d737f5f513fc9868ce33efcc8579e4fc9da[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature[m[33m)[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Thu Feb 22 21:20:17 2024 +0000
+
+    Add order summary
+
+[33mcommit 461d59f7c768782963c67203728e0148ab077602[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Tue Feb 20 21:03:27 2024 +0000
+
+    Add order status
+
+[33mcommit 6efc35d4c668e59ed61346afcb2bc3f7a7c8658f[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Tue Feb 20 21:01:15 2024 +0000
+
+    Add order payment details component
+
+[33mcommit 98557eafcdd8add1334962241fd2ab6c876d4cfc[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Sun Feb 18 20:38:28 2024 +0000
+
+    Update page logo
+
+[33mcommit 8a7d9a412aeaa5bf9c15e547d9b1d9c3505cf63a[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Sun Feb 18 20:32:20 2024 +0000
+
+    Add related product component
+
+[33mcommit 6d1db8c10e182b5e611bccc2bcde82acdc7e7157[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Sun Feb 18 20:15:15 2024 +0000
+
+    Update product card component
+    
+    - add tag labels for sales, hot, new
+    - add wish list button on component hover
+
+[33mcommit ef5c791c39d987b5d6e78d40337b8ef08b0f9d26[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Sun Feb 18 20:08:20 2024 +0000
+
+    Add wish-list button
+
+[33mcommit 9ba63f1b88e74f7dc73a9dcf7107414456f7868e[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Fri Feb 16 21:16:49 2024 +0000
+
+    Add update static files
+
+[33mcommit 8f37b4dd4fc6744dc5f7c9ab6176efe6c5427316[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Fri Feb 16 21:04:50 2024 +0000
+
+    Rename text_collapse to collapsible_dev
+
+[33mcommit a2513e07e3b665f51289f2bf7eccbb28c2131930[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Thu Feb 15 13:57:27 2024 +0000
+
+    Add product review
+
+[33mcommit 751c781fbab50ba63385365c3181a16640d3feaa[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Wed Feb 14 13:04:45 2024 +0000
+
+    Add customer product reviews component
+
+[33mcommit 5634ea471e6228996ceae2fcb4d82f793667dc24[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Tue Feb 13 12:54:04 2024 +0000
+
+    Add commont types
+
+[33mcommit 42bd6e42d3dd942884ec0e4d63f2efc5cde218b9[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Tue Feb 13 12:24:58 2024 +0000
+
+    Update component suspense skeletion
+
+[33mcommit 40bdea1684240caabf57feaa4852ff99aa3c412c[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Mon Feb 12 12:22:42 2024 +0000
+
+    Add product rating statistics ui
+
+[33mcommit 15ae6a39e5b8945cfebd0ded39d3f23c0a5e4b4a[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Mon Feb 12 12:18:23 2024 +0000
+
+    Add product card
+
+[33mcommit f047a212a998bff04d521dacc0b46a72df70cb11[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Mon Feb 12 12:13:44 2024 +0000
+
+    Add page font
+
+[33mcommit 7ca070375cc85f6fadbf3ac65f258ecf3e3c6ef4[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Mon Feb 12 11:30:26 2024 +0000
+
+    Update progress bar to accept custom css
+
+[33mcommit 9eec7f751fb1ba73d313ffaf7c9a7e95420773c8[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Sun Feb 11 14:06:14 2024 +0000
+
+    Add page logo
+
+[33mcommit 19a34734dd2c7ceb3fa12264adb40c9ba0f8143a[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Sat Feb 10 22:10:26 2024 +0000
+
+    Add footer
+
+[33mcommit a284ea31971482afb42b70e2383c0c0752ded7c2[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Fri Feb 9 22:09:13 2024 +0000
+
+    Add temp palce hoder pictures
+
+[33mcommit 18bf4dde9c20d9d147d7b81990738dfdba824474[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Fri Feb 9 22:07:51 2024 +0000
+
+    Add cart component
+
+[33mcommit 8cf7f6711dd5ff6ff2174cf8169fa3f819b2bdeb[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Thu Feb 8 22:06:47 2024 +0000
+
+    Add cart product component
+
+[33mcommit 06c4be97057b08c4838b7fd5c5e16598add5347e[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Thu Feb 8 22:05:04 2024 +0000
+
+    Add number input
+
+[33mcommit d078706689a5b5a6afdd4bb4426e85612096320d[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Thu Feb 8 22:03:24 2024 +0000
+
+    Add product detail card
+
+[33mcommit 8cbe3e9a8b95b466a17cabfbdddc0de50daef9b3[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Thu Feb 8 22:02:28 2024 +0000
+
+    Add product card
+
+[33mcommit 38ac5c72277162f34ccd57b077eeb8ab20366ff2[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Wed Feb 7 22:00:43 2024 +0000
+
+    Add mock data
+
+[33mcommit f57091afe37c8432433250eee1f97510bd123f07[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Wed Feb 7 22:00:03 2024 +0000
+
+    Add progress bar componnet
+
+[33mcommit dd99fbd52a4291dafbaad8d36b8a973c6c273e35[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Wed Feb 7 21:58:58 2024 +0000
+
+    Add text collapse componnet
+
+[33mcommit f5dcc5a65226a841f046f9dde0139fbbc92999dc[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Wed Feb 7 21:57:39 2024 +0000
+
+    Add rating component
+
+[33mcommit a322ac0f619b6a8482115dd392a5896fb74c0c03[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Tue Feb 6 13:36:17 2024 +0000
+
+    Add image skeleton for suspension
+
+[33mcommit c8e908c669f0c5a1215678557c59d4a2e846b54e[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Mon Feb 5 18:02:35 2024 +0000
+
+    Add sign in form
+    
+    - update tailwind with custom color
+
+[33mcommit 81c1db165c53c0db220ff3df6bb4a7f82317c8a2[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: lawrence <lawcubegsm@gmail.com>
+Date:   Sun Feb 4 21:35:38 2024 +0000
+
+    Initial commit
