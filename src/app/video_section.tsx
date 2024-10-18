@@ -27,7 +27,7 @@ const VideoSection = () => {
     <div className="flex w-full lg:h-[38rem] overflow-hidden">
           <div className='relative h-full w-full'>
             <video autoPlay loop muted className="relative w-full h-fit"  ref={ref}>
-                <source src="/video.mp4" type="video/mp4" />
+                <source src="https://mkchurch.s3.us-east-2.amazonaws.com/video.mp4" type="video/mp4" />
              </video>
             <div className="absolute top-0 right-0 left-0 bottom-0 bg-black/70 text-white">
               <div className="w-full h-full my-auto  flex justify-center items-center  ">
