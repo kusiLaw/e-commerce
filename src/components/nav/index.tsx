@@ -99,7 +99,7 @@ const Nav = () => {
                    <Image alt={'profile'}src={'/shopping-cart.svg'} height={25} width={25} className=''
                       />
                     <span id='cart' className='absolute text-center font-semibold top-1.5  w-8 -right-4 rounded-full text-sm  hover:text-blue-context text-red-500 border- overflow-clip text-ellipsis
-                    'onClick={() => { closeAll(); setDisplayCart(true) }}>0</span>
+                    'onClick={() => { closeAll(); setDisplayCart(true) }}>2</span>
                   </button>
                 </div>
             </div>
