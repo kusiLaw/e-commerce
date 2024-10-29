@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import OrderSummary from '@/components/orders/order_summary'
 import Image from 'next/image'
 import { products} from '@/data/mock'
@@ -41,22 +42,22 @@ const Checkout = (
 
     //********* ENABLE THIS CODE IF YOU WANT HANDLE PAYMENT BY YOURSELF,  *******************/
 
-  // const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('visa');
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('visa');
  
 
-  // const handleChange = (event:any, fn =(e:any)=>{''}) => {
-  //   event.stopPropagation()
-  //   console.log(event.target.value)
-  //   fn(event.target.value);
-  // };
+  const handleChange = (event:any, fn =(e:any)=>{''}) => {
+    event.stopPropagation()
+    console.log(event.target.value)
+    fn(event.target.value);
+  };
 
-  // const handleCardNumber = (event:any, setFn:any) =>{
-  //     let card = event.target.value
-  //     card = card.replace(/\s+/g, '')
-  //     card = card.match(/.{1,4}/g) || [];
-  //     console.log(card.join(''))
-  //     setFn(card.join('  '))
-  // }
+  const handleCardNumber = (event:any, setFn:any) =>{
+      let card = event.target.value
+      card = card.replace(/\s+/g, '')
+      card = card.match(/.{1,4}/g) || [];
+      console.log(card.join(''))
+      setFn(card.join('  '))
+  }
 
   //********* BRAINTREE DROPPING UI HERE, YOU MUST COMMENT THIS IF YOUR HANDLE PAYMENT BY YOURSELF ,  *******************
 
@@ -87,13 +88,13 @@ const Checkout = (
 
                   <Input label='postal code' type='text' name='post-code' placeholder='Post code' required/>
               </div>
-              <div className={'mt-10'}>
+              {/* <div className={'mt-10'}>
                 <Submit text='buy now' pending_text='making payment...'/>
-              </div>
+              </div> */}
             </div>
     
            {/* ******** ENABLE THIS CODE IF YOU WANT HANDLE PAYMENT BY YOURSELF,  ****************** */}
-           {/* <div>
+           <div>
               <div>
                 <div className='flex justify-between  mb-3 mt-6 '>
                   <p className='capitalize font-medium'>payment details</p>
@@ -166,8 +167,10 @@ const Checkout = (
                    
               </div>
            </div>
-          */}
-
+         
+      <div className={'mt-10'}>
+                <Submit text='buy now' pending_text='making payment...'/>
+              </div>
             
             {/********* BRAINTREE DROPPING UI HERE, YOU MUST COMMENT THIS IF YOUR HANDLE PAYMENT BY YOURSELF ,  *******************/}
             
