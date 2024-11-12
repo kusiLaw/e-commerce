@@ -1,0 +1,620 @@
+{
+    "count": 22,
+    "next": "http://127.0.0.1:8000/api/v1/products/?page=2",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "url": "http://127.0.0.1:8000/api/v1/products/1/",
+            "name": "HP",
+            "product_code": null,
+            "description": "Lorem",
+            "tag": "hot",
+            "price": "180.00",
+            
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                },
+                {
+                    "color": "blue",
+                    "color_code": "#0008fc"
+                },
+                {
+                    "color": "black",
+                    "color_code": "#0d0d0d"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/hp_envy_1.jpg"
+                },
+                {
+                    "image": "/hp_envy_2.jpg"
+                },
+                {
+                    "image": "/hp_envy_3.jpg"
+                },
+                {
+                    "image": "/hp_envy_4.jpg"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "url": "http://127.0.0.1:8000/api/v1/products/2/",
+            "name": "iphone 13",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "434.00",
+            "color": [],
+            "product_image": [
+                {
+                    "image": "/iphone_13_1.png"
+                },
+                {
+                    "image": "/iphone_13_2.png"
+                },
+                {
+                    "image": "/iphone_13_3.png"
+                },
+                {
+                    "image": "/iphone_13_3_GjxSJeA.png"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "url": "http://127.0.0.1:8000/api/v1/products/3/",
+            "name": "Gucci Ladies bag",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "sales",
+            "price": "149.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/bag.jpeg"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "url": "http://127.0.0.1:8000/api/v1/products/4/",
+            "name": "HP 15 Ryzen",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "454.99",
+            "color": [],
+            "product_image": [
+                {
+                    "image": "/hp15-1.jpg"
+                },
+                {
+                    "image": "/hp15-2.jpg"
+                },
+                {
+                    "image": "/hp15-3.jpg"
+                },
+                {
+                    "image": "/hp15-4.jpg"
+                },
+                {
+                    "image": "/hp15-5.jpg"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "url": "http://127.0.0.1:8000/api/v1/products/5/",
+            "name": "Men's Hoodies",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "sales",
+            "price": "54.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                },
+                {
+                    "color": "red",
+                    "color_code": "#fc0000"
+                },
+                {
+                    "color": "pink",
+                    "color_code": "#fc00a4"
+                },
+                {
+                    "color": "blue",
+                    "color_code": "#0008fc"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/hoddies.webp"
+                },
+                {
+                    "image": "/hooddies3.webp"
+                },
+                {
+                    "image": "/hoodies.webp"
+                },
+                {
+                    "image": "/hoodies2.webp"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "url": "http://127.0.0.1:8000/api/v1/products/6/",
+            "name": "Design Mens Hoodies",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "new",
+            "price": "79.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/hoddie_d1.webp"
+                },
+                {
+                    "image": "/hoddie_d2.webp"
+                },
+                {
+                    "image": "/hoddie_d3.webp"
+                },
+                {
+                    "image": "/hoddie_d4.webp"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "url": "http://127.0.0.1:8000/api/v1/products/7/",
+            "name": "Men's orignal suit",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "hot",
+            "price": "79.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/suit.webp"
+                },
+                {
+                    "image": "/suit2.webp"
+                },
+                {
+                    "image": "/suit3.webp"
+                },
+                {
+                    "image": "/suit4.webp"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "url": "http://127.0.0.1:8000/api/v1/products/8/",
+            "name": "Tote Woman's hand bag",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "34.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/tote_bag.webp"
+                },
+                {
+                    "image": "/tote_bag1.webp"
+                },
+                {
+                    "image": "/tote_bag2.webp"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "url": "http://127.0.0.1:8000/api/v1/products/9/",
+            "name": "Hp Alienware",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "hot",
+            "price": "699.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/lap-alien3.webp"
+                },
+                {
+                    "image": "/lap-alien1.webp"
+                },
+                {
+                    "image": "/lap-alien2.webp"
+                },
+                {
+                    "image": "/lap-alien5.webp"
+                },
+                {
+                    "image": "/lap-alien4.webp"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "url": "http://127.0.0.1:8000/api/v1/products/10/",
+            "name": "boy's winter jacket",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "34.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/winter.webp"
+                },
+                {
+                    "image": "/winter2.webp"
+                },
+                {
+                    "image": "/winter3.webp"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "url": "http://127.0.0.1:8000/api/v1/products/11/",
+            "name": "Men's british coat",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "new",
+            "price": "359.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/british-coat1.jpg"
+                },
+                {
+                    "image": "/british-coat2.jpg"
+                },
+                {
+                    "image": "/british-coat3.jpg"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "url": "http://127.0.0.1:8000/api/v1/products/12/",
+            "name": "Girl flower dress",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "49.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/girls-flower.webp"
+                },
+                {
+                    "image": "/girls-flower1.webp"
+                },
+                {
+                    "image": "/girls-flower2.webp"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "url": "http://127.0.0.1:8000/api/v1/products/13/",
+            "name": "school bag kids",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "47.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/lapbag1.webp"
+                },
+                {
+                    "image": "/lapbag2.webp"
+                },
+                {
+                    "image": "/lapbag3.webp"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "url": "http://127.0.0.1:8000/api/v1/products/14/",
+            "name": "iphone 15",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "249.99",
+            "color": [],
+            "product_image": [
+                {
+                    "image": "/iphone_15_1.png"
+                },
+                {
+                    "image": "/iphone_15_2.png"
+                },
+                {
+                    "image": "/iphone_15_3.png"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "url": "http://127.0.0.1:8000/api/v1/products/16/",
+            "name": "asus",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "sales",
+            "price": "499.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/asus.webp"
+                },
+                {
+                    "image": "/asus2.webp"
+                },
+                {
+                    "image": "/asus3.webp"
+                },
+                {
+                    "image": "/asus4.webp"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "url": "http://127.0.0.1:8000/api/v1/products/17/",
+            "name": "Game Desktop Rysen 5",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "hot",
+            "price": "749.99",
+            "color": [],
+            "product_image": [
+                {
+                    "image": "/game.png"
+                },
+                {
+                    "image": "/game2.png"
+                },
+                {
+                    "image": "/game3.png"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "url": "http://127.0.0.1:8000/api/v1/products/18/",
+            "name": "alien 3 Game laptop",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "new",
+            "price": "599.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/lap-alien1_HSKRf4F.webp"
+                },
+                {
+                    "image": "/lap-alien2_gNvRtzu.webp"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "url": "http://127.0.0.1:8000/api/v1/products/19/",
+            "name": "Nike",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "249.99",
+            "color": [],
+            "product_image": [
+                {
+                    "image": "/nike.jpeg"
+                },
+                {
+                    "image": "/nike2.png"
+                },
+                {
+                    "image": "/nike3.png"
+                },
+                {
+                    "image": "/nike4.png"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "url": "http://127.0.0.1:8000/api/v1/products/20/",
+            "name": "ladies pointer shoe",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "sales",
+            "price": "230.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/lady_shoe.webp"
+                },
+                {
+                    "image": "/lady_shoe1.webp"
+                },
+                {
+                    "image": "/lady_shoe3.webp"
+                },
+                {
+                    "image": "/lady_shoe4.webp"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "url": "http://127.0.0.1:8000/api/v1/products/21/",
+            "name": "sweater - boys",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "new",
+            "price": "220.00",
+            "color": [
+                {
+                    "color": "blue",
+                    "color_code": "#0008fc"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/kids_sweater1.webp"
+                },
+                {
+                    "image": "/kids_sweater2.webp"
+                },
+                {
+                    "image": "/kids_sweater3.webp"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "url": "http://127.0.0.1:8000/api/v1/products/22/",
+            "name": "Nike Sports",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "199.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/club-nike3.jpg"
+                },
+                {
+                    "image": "/club-nike2.jpg"
+                },
+                {
+                    "image": "/club-nike.jpg"
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "url": "http://127.0.0.1:8000/api/v1/products/23/",
+            "name": "men's causual sweater",
+            "product_code": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            "tag": "default",
+            "price": "79.99",
+            "color": [
+                {
+                    "color": "brawn",
+                    "color_code": "#8a7878"
+                },
+                {
+                    "color": "red",
+                    "color_code": "#fc0000"
+                },
+                {
+                    "color": "pink",
+                    "color_code": "#fc00a4"
+                },
+                {
+                    "color": "blue",
+                    "color_code": "#0008fc"
+                }
+            ],
+            "product_image": [
+                {
+                    "image": "/sweater-casual.webp"
+                },
+                {
+                    "image": "/sweater-casual2.webp"
+                },
+                {
+                    "image": "/sweater-casual5.webp"
+                },
+                {
+                    "image": "/sweater-casual3.webp"
+                },
+                {
+                    "image": "/sweater-casual4.webp"
+                }
+            ]
+        }
+    ]
+}
