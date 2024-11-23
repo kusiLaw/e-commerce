@@ -1,9 +1,14 @@
 
-import CartProduct from '@/components/cart/product'
+'use client'
 import OrderSummary from '@/components/orders/order_summary'
 import React from 'react'
 import { products } from '@/data/mock'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+
+const  CartProduct = dynamic(() => import('@/components/cart/product'), {
+  ssr: false,
+})  
 
 const ShoppingCart = () => {
   return (
