@@ -1,13 +1,15 @@
+import { setLocalStorage } from '@/helper/localStorage';
 import React from 'react'
 import { useFormStatus } from "react-dom";
 
 
-const Submit = ({text='', pending_text=''}) => {
-  const { pending } = useFormStatus();
+
+const Submit = ({text='', pending_text='', ...props}) => {
+  const { pending, } = useFormStatus();
 
   return (
-    <button disabled={pending}
-        type="submit"
+    <button disabled={pending} {...props}
+        type="button"
         className={` flex w-full justify-center rounded-md bg-blue-context font-semibold  px-2 py-2  font- leading-6 text-lg capitalize
         text-white shadow-sm  hover:bg-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
           
