@@ -9,9 +9,9 @@ import Input from '../form/input'
 const Footer = () => {
   const [email, setEmail] = useState('');
   return (
-    <footer className='bg-gray-100 text-black w-full md:-mt-[8rem] lg:-mt-[11rem] max-w-[1660px] mx-auto -z-30'>
+    <footer className='bg-gray-200 text-black w-full md:-mt-[8rem] lg:-mt-[11rem] max-w-[1920px] mx-auto -z-30'>
       <div className='overflow-hidden bg-white w-full'>
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#f3f4f6" fillOpacity="1" d="M0,224L60,240C120,256,240,288,360,293.3C480,299,600,277,720,277.3C840,277,960,299,1080,304C1200,309,1320,299,1380,293.3L1440,288L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#e5e7eb"  fillOpacity="1" d="M0,224L60,240C120,256,240,288,360,293.3C480,299,600,277,720,277.3C840,277,960,299,1080,304C1200,309,1320,299,1380,293.3L1440,288L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
 
       </div>
        <div className='flex flex-col md:flex-row justify-between  w-full mt-10 px-4 md:px-10'>
