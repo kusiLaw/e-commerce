@@ -12,7 +12,7 @@ export default function RootLayout({
           <div className="mt-[4rem] w-full">
               {children}
           </div>
-          {/* <Footer/> */}
+          
        </div>
     );
   }
