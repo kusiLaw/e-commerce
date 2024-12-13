@@ -14,7 +14,7 @@ export default function GlobalError({
     <html>
       <body>
         <Nav/>
-        <div className="flex flex-col justify-center items-center ">
+        <div className="flex flex-col justify-center items-center py-20 ">
           <h2>Something went wrong!</h2>
           <button onClick={() => reset()}>Try again</button>
         </div>

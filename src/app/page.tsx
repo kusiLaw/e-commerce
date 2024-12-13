@@ -13,13 +13,26 @@ import { BiCart } from "react-icons/bi";
 import Link from "next/link";
 import ProductUi from "./productui";
 import { Suspense } from "react";
+import { Metadata } from "next";
 import { ImageSkeleton, } from "@/components/skeleton/image";
 import { ProductSkeleton, ProductUiSkeleton} from "@/components/skeleton";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import { getData } from "@/lib/backend/server_actions";
+
+
+export const metadata: Metadata = {
+  title: "Product | lakyshop",
+  description: "Browse our product collection",
+  openGraph: {
+    title: "Product",
+    description: "Browse our product collection",
+  },
+};      
 
 
 export default async function Home() {
-
+  const products = await getData();
+  
   return (
     <>
       <Nav />
@@ -27,12 +40,12 @@ export default async function Home() {
       <div className="mt-[4.45rem] w-full ">
         <main className="relative w-full px-2 md:px-3  ">
 
-          <section className="bg-[#7aa8c5]/30 py-8 h-[31rem] bg-fixed -z-10 pt-6 img_4">
-            <div className=" mt-3 h-full">
-               <div className="p-8 lg:ml-[8%] lg:mt-[4rem] h-full bg-[#eee]/80 w-[90%] m-auto  lg:bg-transparent" >
-                  <p className="font-bold te text-[2rem] md:text-[2.5rem]">Hurry Up!</p>
-                  <p className="font-bold text-[1.8rem] md:text-[2.5rem] text-black/80">Deal of the Day!</p>
-                  <p className="mt-3 text-wite">Buy This T-shirt At 20% Discount, Use Code Off20</p>
+         <section className="bg-[#7aa8c5]/30 py-8 h-[32rem] bg-fixed -z-10  img_4">
+            <div className="  h-full">
+               <div className="p-8 lg:ml-[8%]  h-full bg-[#eee]/80 w-[90%] m-auto  lg:bg-transparent flex  flex-col items-center lg:items-start justify-center gap-2" >
+                  <p className="font-bold te text-[2rem] md:text-[2.5rem] mb-6">Hurry Up!</p>
+                  <p className="font-bold text-[1.8rem] md:text-[2.5rem] text-black/80 mb-8">Deal of the Day!</p>
+                  <p className="mt-3 text-wite w-full text-center lg:text-left ">Buy This Any Product At 20% Discount, Use Code Off20</p>
                   <Link href={'/products/?cat=women'}
                     className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-[#0172a5]/70 font-semibold mt-6  px-4 py-3  font- leading-6 text-lg capitalize
                     text-white shadow-sm  hover:bg-[#0172a5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}>
@@ -53,8 +66,8 @@ export default async function Home() {
                       image: "women_collection",
                       text: "women",
                       link: "/products/?cat=women",
-                      img_height: 100 ,
-                      img_width :140
+                      img_height: 80 ,
+                      img_width :120
                     },{
                       image: "kids6",
                       text: "kids",
@@ -65,7 +78,7 @@ export default async function Home() {
                       image: "mens_collection",
                       text: "mens",
                       link: "/products/?cat=men",
-                      img_height: 200 ,
+                      img_height: 140 ,
                       img_width :200
                     },{
                       image: "alien2",
@@ -86,13 +99,14 @@ export default async function Home() {
  
           </section>
           
-          <section className={`relative    h-[calc(568px-5.5rem)] md:h-[)]  mt-10 `}>
+          
+ <section className={`relative    h-[calc(568px-5.5rem)] md:h-[)]  mt-10 `}>
             <div className=" bg-[#05876b]/30 img_1 bg-bottom bg-contain   h-full w-full flex flex-col justify-center items-center  ">
                 <div className="my-[2rem] h-full  w-full m-auto    lg:bg-transparent" >
-                    <div className="w-[90%] h-[95%] m-auto bg-[#eee]/80 p-4 lg:py-10 lg:px-12 lg:bg-transparent ">
+                    <div className="w-[90%] h-[95%] m-auto bg-[#eee]/80 p-4 lg:py-10 lg:px-12 lg:bg-transparent flex  flex-col items-center lg:items-start justify-center gap-2">
                       <p className="font-bold te text-[1.8rem] md:text-[2.1rem] lg:text-[2.5rem] text-inherit mt-4">Feel different ?</p>
-                      <p className="font-bold text-[1.2rem] md:text-[2rem] lg:text-[2.3rem] text-black/80 mt-2">Original Men{"'"}s Collections!</p>
-                      <p className="mt-3 text-wite text-inherit ">Be on top of your dress and make others feel your presence</p>
+                      <p className="font-bold text-[1.2rem] md:text-[2rem] lg:text-[2.3rem] text-black/80 mt-2 lg:mt-6">Original Men{"'"}s Collections!</p>
+                      <p className="mt-3 text-wite text-inherit text-center lg:text-left lg:mt-8">Be on top of your dress and make others feel your presence</p>
                       <Link href={'/products/?cat=men'}
                         type="submit"
                         className={`${assistant.className} flex w-fit justify-center items-center gap-3 rounded-md bg-[#05876b]/70 font-semibold mt-8  px-4 py-3  font- leading-6 text-lg capitalize
@@ -105,21 +119,18 @@ export default async function Home() {
             </div>
 
           </section>
-
-          <section className="bg-back mt-10 mb-20 pt-10">
+          <section className="bg-back mt-10 mb-20 pt-10 px-4 md:px-8">
             <div className=" ">
               <h2 className={` text-center flex flex-col gap-3 text-2xl font-medium capitalize after:h-[2px] after:w-12 after:self-center  after:bg-red-600`}>
                 featured products
               </h2>
               
                 <Suspense fallback={<ProductUiSkeleton number={10}/>}>
-                  {/* <div className="w-full m-auto pt-10 grid xsm:grid-cols-2  sm:grid-cols-3 gap-4 md:gap-6 md:grid-cols-4   xl:grid-cols-5 "> */}
-                    <ProductUi url={ 'v1/products/?page=1&count=10'} />
-                  {/* </div> */}
+                    <ProductUi products={ products?.results.slice(0,8)}  className="grid xsm:grid-cols-2  md:grid-cols-3 gap-4 md:gap-6 xl:grid-cols-4 3xl:grid-cols-5  "/>
                 </Suspense>
           
-              <div className="w-full flex justify-center md:justify-end mt-10 md:pr-4 lg:pr-10">
-                    <Link href={'/products'} className="capitalize py-2 px-4 border bg-gray-50 md:border-none text-sm  cursor-pointer">view More</Link>
+              <div className="w-full flex justify-center md:justify-center mt-12 md:pr-4 lg:pr-10">
+                    <Link href={'/products'} className="capitalize py-2 px-4 border bg-gray-200 md:border-none text-sm shadow-sm hover:bg-gray-300 cursor-pointer">view More</Link>
               </div>
             </div>
           </section>
