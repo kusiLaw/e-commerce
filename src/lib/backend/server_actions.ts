@@ -1,27 +1,27 @@
 'use server'
 
 import { revalidatePath } from "next/cache"
-import { baseUrl } from "./baseurls"
-// import { notFound } from 'next/navigation'
+import { baseUrl } from "./urls"
+import fs from 'fs';
+import path from 'path';
+
+export async function getData( relativeUrl = '') {
+  
+  
+
+   const file = path.join(process.cwd(), '/src/data/products.json');
+  
+    try {
+      const data = fs.readFileSync(file, 'utf8');
+      return JSON.parse(data);
+    } catch (err) {
+      return []
+    }
 
 
-// const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 
-
-export async function getData(relativeUrl = '') {
-  try {
-      const res = await fetch(baseUrl + relativeUrl);
-console.log(baseUrl + relativeUrl)
-      const data = await res.json()
-    
-      // await sleep(1000)
-      // revalidatePath('/')
-      
-      return data
-  }catch{
-     return undefined
-  }
+  
 
 }
 

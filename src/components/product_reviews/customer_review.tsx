@@ -13,7 +13,7 @@ const CustomerReview = ({ name, rate, image, comment, onPage = false }: Customer
      return (
        <div className="w-full p-4 md:p-8 mt-16 mb-2 bg-gray-50 drop-shadow-md  flex flex-col gap-4 justify-center rounded-lg">
         <p className='h-[6rem]  text-ellipsis overflow-hidden'>{`" ${comment} " `}</p>
-        <Star rate={rate} numberOfStars={5} disableColor={false}   />
+        <Star rate={rate} numberOfStars={5} disableColor={true}   />
         <div className="flex items-center gap-4 mt-2">
           <div className='relative flex flex-col justify-center items-center content-center h-[3rem] w-[3rem] rounded-full  bg-blue-100  ring-3 ring-white '>
             <Image src={image} alt={name} fill className='rounded-full '/>
@@ -34,7 +34,7 @@ const CustomerReview = ({ name, rate, image, comment, onPage = false }: Customer
             <div className='flex flex-col gap-1'>
                 <h2 className='font-semibold'>{name}</h2>
                 <div className=''>
-                  <Star rate={rate} numberOfStars={5} disableColor={false} />
+                  <Star rate={rate} numberOfStars={5} disableColor={true} />
                 </div>
                 
             </div>

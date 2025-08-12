@@ -1,5 +1,5 @@
 'use client'
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function Error({
   error,

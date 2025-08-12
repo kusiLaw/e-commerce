@@ -1,28 +1,25 @@
 import React, { Suspense } from 'react'
-import ProductCard from '@/components/product/product_card'
 import Link from 'next/link'
-import Pagination from '@/components/pagination'
 import Filter from '@/components/filter'
-import { CiSearch } from "react-icons/ci";
 import { BiGridAlt } from "react-icons/bi";
 import { FaList } from "react-icons/fa6";
 import { Metadata } from 'next'
-import { getData } from '@/lib/backend/django/server_actions'
-import { Productlist } from '@/type/types'
+import { getData } from '@/lib/backend/server_actions'
 import SearchInput from '@/components/form/search'
-import ProductSection from './product_section'
 import ProductUi from '../productui'
 import { ProductUiSkeleton } from '@/components/skeleton'
-// import { useSearchParams } from 'next/navigation';
 
 
 export const metadata: Metadata = {
   title: 'Product',
+  description: 'Browse our product collection',
+
+
 }
 
 
 
-export default async function Products({
+export default async function Products({  
   searchParams,
 }: {
   searchParams?: {
@@ -31,9 +28,11 @@ export default async function Products({
   };
   }) {
   
-  console.log(searchParams,'search....')
-  const query = searchParams?.name || '';
-  const currentPage = Number(searchParams?.page) || 1 ;
+  // const query = searchParams?.name || '';
+  // const currentPage = Number(searchParams?.page) || 1 ;
+  
+  const products = await getData();
+
 
   return (
     <div className='w-full h-auto pt-4 icon_bg px-2 md:px-3'>
@@ -48,8 +47,10 @@ export default async function Products({
         </div>
          <div className='w-full '>
             <div className="flex  w-full justify-end items-center mt-2  h-[2.3rem]  mb-6 pr-10">
-               
-               <SearchInput  placeholder={"Search..."}/>
+            <Suspense fallback={<>loading</>}>
+              <SearchInput placeholder={"Search..."} />
+            </Suspense>
+            
                <div className='text-[1.2rem] ml-5 text-gray-500 hover:text-gray-700'>
                  <BiGridAlt/>
                </div>
@@ -57,10 +58,11 @@ export default async function Products({
                   <FaList/>
                </div>
             </div>
-            <Suspense fallback={<ProductUiSkeleton number={10}/>}>
-              {/* <div className="w-full m-auto grid xsm:grid-cols-2 gap- sm:grid-cols-3  md:grid-cols-4  xl:grid-cols-5 xs:overflow-y-scro"> */}
-                  <ProductUi url={`v1/products/?page=${query}` } />
-              {/* </div> */}
+          <Suspense fallback={<ProductUiSkeleton number={10} />}>
+            <div className='w-full mx-auto px-4 md:px-6 lg:px-8'>
+        
+              <ProductUi products={products.results}  className="grid xsm:grid-cols-2  lg:grid-cols-3 gap-4 md:gap-6 xl:grid-cols-4   " />
+            </div>
             </Suspense>
           <div className='flex flex-col w-full  items-center my-16'>
             {/* <Pagination totalItems = {products.count}/> */}
@@ -70,7 +72,6 @@ export default async function Products({
          </div>
       </div>
     </div>
-
   )
 }
 

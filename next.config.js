@@ -4,12 +4,18 @@ module.exports = {
   },
   images: {
     remotePatterns: [
+      // {
+      //   protocol: process.env['IMAGE_PROTOCOL'] || 'http',
+      //   hostname: process.env['IMAGE_HOST'] ||  '127.0.0.1',
+      //   port: process.env['IMAGE_PORT'] || '8000',
+      //   pathname: process.env['IMAGE_PATH'] || '/media/**',
+      // },
       {
-        protocol: process.env['IMAGE_PROTOCOL'] || 'http',
-        hostname: process.env['IMAGE_HOST'] ||  '127.0.0.1',
-        port: process.env['IMAGE_PORT'] || '8000',
-        pathname: process.env['IMAGE_PATH'] || '/media/**',
+        protocol: 'https',
+        hostname: `${process.env.IMG_URL}`,
+        pathname: '/static/**',
       },
+
     ],
   },
 }

@@ -3,7 +3,7 @@ import { LineSkeleton } from "./line"
 
 export const ProductSkeleton = () => {
     return (
-       <div  className='relative  group  borde-[1px] w-[11.5rem] lg:w-[12.5rem] h-fit my-2 pt-1 mx-auto px-auto grow shrink' >
+       <div  className='relative  group  borde-[1px] w-full max-w-3xl h-fit my-2 pt-1 mx-auto px-auto grow shrink' >
          <div  className='relative  group  border-[1px] 
                    w-[11.5rem] lg:w-[12.5rem] h-fit my-2 pt-1 mx-auto px-auto grow shrink' >
            <div className='w-full relative flex flex-col items-center justify-center gap-2 mx-auto flex-shrink '>

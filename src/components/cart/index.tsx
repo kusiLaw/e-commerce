@@ -1,18 +1,21 @@
 'use client'
-import { Fragment, useState } from 'react'
-import { useRouter, usePathname, redirect } from 'next/navigation'
+import { Fragment ,useContext} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import CartProduct from './product'
 import Link from 'next/link'
-import { todo } from 'node:test'
+import { getLocalStorage } from '@/helper/localStorage'
+import { TotalCartPrice,  } from '@/helper'
+import { updateShopingCartContext } from '@/app/provider'
 
 
 export default function Cart({open=false, setOpen=(e:any)=>{}} ) {
-  // const [open, setOpen] = useState(isOpen )
-  const router = useRouter()
-  const pathname = usePathname()
-  
+  const { updateShopingCart } = useContext(updateShopingCartContext);
+  const totalPrice = () => {
+    const cart = getLocalStorage('cart') || [];
+    return TotalCartPrice( Object.values(cart));
+  }
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-40 w-full " onClose={setOpen}>
@@ -58,7 +61,7 @@ export default function Cart({open=false, setOpen=(e:any)=>{}} ) {
                         </div>
                       </div>
 
-                      <CartProduct/>
+                      <CartProduct disabledNumberInput={true}/>
                     </div>
 
 
@@ -66,34 +69,30 @@ export default function Cart({open=false, setOpen=(e:any)=>{}} ) {
                     <div className="border-t-[0.1px] shadow-2xl bg-gray-50/70 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
-                        <p>$262.00</p>
+                        <p>{updateShopingCart && totalPrice()}</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       
                       {/** button */}
                       <div className="mt-6">
-                        <button 
-                          // href="#"
+                        <Link href={'/products/checkout'} 
+                        
                           className="flex items-center justify-center w-full rounded-md border border-transparent bg-blue-context hover:bg-blue-hover
                            px-6 py-2.5 text-base font-medium text-white shadow-sm"
                           onClick={() => {
-                            // todo: handle redirect base on different page
-                            // if (pathname.split('/').includes('details')) {
-                            //   console.log(pathname.split('/'))
-                            //      router.push('/checkout')
-                            // } else {
-                            //   router.push('products/checkout')
-                            // }
-                                  
-
+                     
                             setOpen(false);
 
                           }}
                         >
                           Checkout
-                        </button>
-                        <Link
-                          href={'/cart'}
+                        </Link>
+                        <Link href={'/cart'}
+                         
+                          onClick={() => {
+                         
+                            setOpen(false)
+                          }}
                           className="flex mt-6 items-center justify-center w-full rounded-md border border-blue-context hover:bg-gray-50
                            px-6 py-2.5 text-base font-medium text-blue-context shadow-sm"
                         >
@@ -105,14 +104,18 @@ export default function Cart({open=false, setOpen=(e:any)=>{}} ) {
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>
                           or{' '}
-                          <button
+                          <Link
+                            href={'/products'}
+                           
                             type="button"
                             className="font-medium text-blue-context hover:text-blue-hover"
-                            onClick={() => setOpen(false)}
+                            onClick={() => {
+                             
+                              ; setOpen(false)}}
                           >
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>
-                          </button>
+                          </Link>
                         </p>
                       </div>
 
