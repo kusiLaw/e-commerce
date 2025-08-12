@@ -1,10 +1,9 @@
-import ProductCard from "@/components/product/product_card";
 import { assistant } from "@/components/font";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer/footer";
 import { IoIosArrowForward } from "react-icons/io";
 import ProductCategoryCard from "@/components/product/category_card";
-import { customerPageReview, products } from "@/data/mock";
+import { customerPageReview,  } from "@/data/mock";
 import VideoSection from "./video_section";
 import CustomerReview from "@/components/product_reviews/customer_review";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -14,9 +13,7 @@ import Link from "next/link";
 import ProductUi from "./productui";
 import { Suspense } from "react";
 import { Metadata } from "next";
-import { ImageSkeleton, } from "@/components/skeleton/image";
-import { ProductSkeleton, ProductUiSkeleton} from "@/components/skeleton";
-import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import { ProductUiSkeleton} from "@/components/skeleton";
 import { getData } from "@/lib/backend/server_actions";
 
 
